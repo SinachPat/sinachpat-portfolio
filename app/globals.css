@@ -25,11 +25,11 @@
   --gray-2:    #E0E0E0;
 
   /* Accent — Electric Teal */
-  --accent:    #0ABFBC;
-  --accent-h:  #089A97;
+  --accent:    #001eff;
+  --accent-h:  #0014af;
 
   /* Status colors */
-  --status-live:     #0ABFBC;
+  --status-live:     #001eff;
   --status-progress: #F59E0B;
   --status-archived: #999999;
 
