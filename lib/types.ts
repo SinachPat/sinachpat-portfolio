@@ -33,6 +33,9 @@ export interface PlayItem {
   title: string;
   description: string;
   tags: string[];
+  year: number;
+  status: "live" | "in-progress" | "archived" | "shipped";
+  category: string; // e.g. "Tool", "Prototype", "Design", "App"
   url?: string;
   image?: string;
 }

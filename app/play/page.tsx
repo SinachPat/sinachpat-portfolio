@@ -1,23 +1,12 @@
 import type { Metadata } from "next";
 import { PlayGrid } from "@/components/play/PlayGrid";
 import { FadeIn } from "@/components/ui/FadeIn";
-import type { PlayItem } from "@/lib/types";
+import { PLAY_ITEMS } from "@/lib/play-items";
 
 export const metadata: Metadata = {
   title: "Playground",
-  description:
-    "Side projects, experiments, and things built for fun.",
+  description: "Side projects, experiments, and things built for fun.",
 };
-
-// Static play items — add more here as you build things
-const PLAY_ITEMS: PlayItem[] = [
-  {
-    title: "Portfolio v1",
-    description:
-      "The very first version of this portfolio — a learning exercise in Next.js and design systems.",
-    tags: ["Next.js", "Design Systems", "Tailwind"],
-  },
-];
 
 export default function PlayPage() {
   return (
