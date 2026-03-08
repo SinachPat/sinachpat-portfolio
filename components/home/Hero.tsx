@@ -27,7 +27,7 @@ export function Hero() {
 
       <FadeIn delay={160}>
         <p
-          className="text-base leading-relaxed max-w-lg w-10xl"
+          className="text-base leading-relaxed max-w-lg w-8xl"
           style={{ color: "var(--text-2)" }}
         >
           I&apos;m Osinachi Patrick — I work at the intersection of product
