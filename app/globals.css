@@ -41,30 +41,30 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --bg:        #000000;
-    --surface:   #1C1C1C;
+    --surface:   #0d0d0d;
     --border:    #2A2A2A;
     --border-hi: #3A3A3A;
     --text-1:    #F0F0F0;
     --text-2:    #999999;
     --text-3:    #666666;
-    --gray-1:    #1E1E1E;
-    --gray-2:    #2A2A2A;
-    --header-bg: rgba(17, 17, 17, 0.9);
+    --gray-1:    #0d0d0d;
+    --gray-2:    #101010;
+    --header-bg: rgba(11, 11, 11, 0.9);
   }
 }
 
 /* ── Manual Dark Override ── */
 [data-theme="dark"] {
   --bg:        #000000;
-  --surface:   #1C1C1C;
-  --border:    #2A2A2A;
-  --border-hi: #3A3A3A;
-  --text-1:    #F0F0F0;
-  --text-2:    #999999;
-  --text-3:    #666666;
-  --gray-1:    #1E1E1E;
-  --gray-2:    #2A2A2A;
-  --header-bg: rgba(17, 17, 17, 0.9);
+    --surface:   #0d0d0d;
+    --border:    #2A2A2A;
+    --border-hi: #3A3A3A;
+    --text-1:    #F0F0F0;
+    --text-2:    #999999;
+    --text-3:    #666666;
+    --gray-1:    #0d0d0d;
+    --gray-2:    #101010;
+    --header-bg: rgba(11, 11, 11, 0.9);
 }
 
 /* ── Manual Light Override ── */
