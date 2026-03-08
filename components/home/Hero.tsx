@@ -26,7 +26,7 @@ export function Hero() {
       </FadeIn>
 
       <FadeIn delay={160}>
-        <p className="text-base leading-relaxed w-8xl" style={{ fontSize: "clamp(1rem, 16vw, 1rem)", color: "var(--text-2)" }} >
+        <p className="text-base leading-relaxed w-8xl" style={{ fontSize: "clamp(1rem, 2vw, 1.25rem)", color: "var(--text-2)" }} >
           I&apos;m Osinachi Patrick — I work at the intersection of product
           strategy, design, and engineering. I build things that matter and
           write about what I learn along the way.
