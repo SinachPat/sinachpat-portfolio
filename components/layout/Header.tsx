@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { NavLinks } from "./NavLinks";
-import { ThemeToggle } from "@/components/ui/ThemeToggle";
+// import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { MobileMenu } from "./MobileMenu";
 
 export function Header() {
@@ -32,7 +32,7 @@ export function Header() {
           </div>
 
           <div className="flex items-center gap-3">
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
             {/* Resume — desktop only */}
             <a
               href="/resume/osinachi-patrick-resume.pdf"
