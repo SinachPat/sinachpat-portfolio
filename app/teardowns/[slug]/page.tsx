@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import Link from "next/link";
-import { getTeardownBySlug, getTeardownSlugs } from "@/lib/mdx";
+import { getTeardownBySlug, getTeardownPosts, getTeardownSlugs } from "@/lib/mdx";
 import { TeardownHeader } from "@/components/teardowns/TeardownHeader";
+import { PostNavigation } from "@/components/ui/PostNavigation";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -34,6 +34,12 @@ export default async function TeardownPage({ params }: Props) {
 
   const { meta, content } = data;
 
+  // Prev / next navigation (sorted newest-first, so prev = newer, next = older)
+  const allPosts = await getTeardownPosts();
+  const currentIndex = allPosts.findIndex((p) => p.slug === slug);
+  const prev = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
+  const next = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
+
   return (
     <main>
       <TeardownHeader meta={meta} />
@@ -42,16 +48,14 @@ export default async function TeardownPage({ params }: Props) {
       <div className="container-page py-12">
         <div className="prose">{content}</div>
 
-        {/* Footer */}
-        <div className="mt-12 pt-8 border-t border-[var(--border)]">
-          <Link
-            href="/teardowns"
-            className="text-sm transition-colors hover:text-[var(--accent)]"
-            style={{ color: "var(--text-2)" }}
-          >
-            ← All Teardowns
-          </Link>
-        </div>
+        {/* Prev / Next navigation */}
+        <PostNavigation
+          prev={prev ? { title: prev.title, slug: prev.slug } : null}
+          next={next ? { title: next.title, slug: next.slug } : null}
+          basePath="/teardowns"
+          allPath="/teardowns"
+          allLabel="All Teardowns"
+        />
       </div>
     </main>
   );

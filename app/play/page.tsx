@@ -4,7 +4,7 @@ import { FadeIn } from "@/components/ui/FadeIn";
 import type { PlayItem } from "@/lib/types";
 
 export const metadata: Metadata = {
-  title: "Play",
+  title: "Playground",
   description:
     "Side projects, experiments, and things built for fun.",
 };
@@ -28,7 +28,7 @@ export default function PlayPage() {
             className="text-xs font-medium uppercase tracking-widest mb-4"
             style={{ color: "var(--text-3)" }}
           >
-            Play
+            Playground
           </p>
           <h1
             className="font-bold tracking-tight mb-3"

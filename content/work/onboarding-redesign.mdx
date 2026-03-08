@@ -1,0 +1,142 @@
+---
+title: "Redesigning the Onboarding Flow"
+slug: "onboarding-redesign"
+company: "Acme Corp"
+role: "Product Lead"
+year: 2024
+duration: "Q1 2024 – Q2 2024"
+status: "shipped"
+tags: ["Product Strategy", "UX Design", "0→1"]
+coverImage: "/images/work/onboarding-cover.jpg"
+summary: "Reduced time-to-value from 14 days to 3 by redesigning the activation loop and eliminating 60% of friction points in the signup flow."
+metrics:
+  - label: "Activation Rate"
+    before: "22%"
+    after: "61%"
+  - label: "Time to Value"
+    before: "14 days"
+    after: "3 days"
+  - label: "Support Tickets"
+    before: "400/mo"
+    after: "130/mo"
+externalUrl: ""
+featured: true
+order: 1
+publishedAt: "2024-06-01"
+---
+
+## 01 — Context
+
+Acme Corp is a B2B SaaS platform that helps mid-market companies manage their operational workflows. When I joined the onboarding project, the product had been live for 18 months. Growth was healthy — the marketing team was bringing in 2,400+ signups per month — but something was wrong downstream.
+
+Over 60% of those signups never reached what we internally called the "aha moment": the point where a user creates their first automated workflow and sees it run successfully. Instead, they'd sign up, poke around, and quietly churn.
+
+> The pipeline was full, but the bucket was leaking. We weren't losing users to competitors — we were losing them to confusion.
+
+---
+
+## 02 — The Problem
+
+The existing onboarding flow had 14 screens. Fourteen. It collected company size, industry, budget range, team count, and role — all before the user had seen a single feature. The flow had been designed by committee over 18 months, with every team wanting their own data collected upfront.
+
+When I audited the funnel, the pattern was stark:
+
+1. Step 1 (email/password) — 100% completion
+2. Step 2 (company info) — 74% completion
+3. Step 3 (team size + budget) — 41% completion
+4. Steps 4–14 — effectively dead; fewer than 28% reached the dashboard
+
+The drop-off at step 3 was the cliff. We were asking for commitment before we'd demonstrated any value.
+
+---
+
+## 03 — Research
+
+I ran 12 moderated user interviews across three segments: solo operators, team leads, and enterprise evaluators. I also analyzed 400 session recordings from FullStory and reviewed 6 months of onboarding-related support tickets.
+
+Key findings:
+
+- **Users didn't understand the value proposition from the marketing site.** They knew Acme "automated workflows" but couldn't articulate what that meant for their daily work.
+- **The signup form felt like a procurement form.** Three participants compared it to filling out a vendor assessment. One said: "I just wanted to try it, not commit to a contract."
+- **The most valuable feature — the visual workflow builder — was buried 6 clicks deep.** Users who found it organically had 3x higher retention, but most never got there.
+- **Support tickets were dominated by "how do I start?" questions.** 67% of tickets in the first 7 days were orientation-related, not bug-related.
+
+---
+
+## 04 — Framing the Solution
+
+Based on the research, I framed the redesign around three principles:
+
+1. **Value before commitment.** Don't ask for anything until you've shown something worth caring about.
+2. **Action over explanation.** Show the product, don't explain it. Let users do something meaningful in the first session.
+3. **Progressive disclosure.** Collect data only when it becomes relevant to the user's experience — not when it's convenient for our internal teams.
+
+I proposed eliminating the entire information-gathering phase from onboarding and replacing it with what I called a "value-first" activation model.
+
+> The hypothesis was simple: if we could get users to build and run one workflow in their first session, everything else — data collection, team invites, upgrade conversations — would follow naturally.
+
+---
+
+## 05 — The Design
+
+The redesigned onboarding has three phases:
+
+### Phase 1: Frictionless Entry
+Three steps to reach the product: email, verify, choose a workspace name. No company size. No budget. No role selection. Total time: under 60 seconds.
+
+### Phase 2: Guided First Action
+Instead of a blank dashboard, new users land on an interactive walkthrough. They're presented with three pre-built workflow templates matched to common use cases:
+
+- **"Automate a client intake form"** — for agencies and service businesses
+- **"Set up a team standup report"** — for team leads
+- **"Create an approval chain"** — for operations
+
+The user picks one and walks through customizing it with their own data. The template is functional — by the end of the walkthrough, they've built and triggered a real workflow. This takes about 4 minutes.
+
+### Phase 3: Progressive Data Collection
+After the first workflow runs, we surface a lightweight "personalize your experience" prompt. This collects company size and role — the same data we used to demand upfront — but now the user has context for why it matters. Completion rate for this step: 89%, compared to 41% for the old step 3.
+
+---
+
+## 06 — Execution
+
+The project ran for 12 weeks across two sprints:
+
+- **Weeks 1–4:** Research, framing, and design. I led the design process with one product designer, creating flows in Figma and testing with 8 prototype participants.
+- **Weeks 5–10:** Engineering build. I worked daily with two frontend engineers and one backend engineer to implement the new flow, with weekly check-ins with the data team to ensure analytics coverage.
+- **Weeks 11–12:** Staged rollout. We ran a 50/50 split test between old and new onboarding for 2 weeks, measuring activation rate, time-to-value, and 7-day retention.
+
+The biggest engineering challenge was the template system. Each template needed to be both instructional (guiding the user) and functional (producing a real workflow). We solved this by building a "guided mode" layer on top of the existing workflow editor — it highlights the next step without restricting the user from exploring.
+
+---
+
+## 07 — Outcomes
+
+Within 30 days of full rollout:
+
+- **Activation rate: 22% → 61%.** Nearly 3x more users reached the "aha moment" of running their first workflow.
+- **Time-to-value: 14 days → 3 days.** The median time from signup to first workflow dropped by 79%.
+- **Onboarding support tickets: 400/mo → 130/mo.** A 67% reduction, freeing up the support team to focus on retention and expansion.
+- **7-day retention: 34% → 52%.** Users who completed the guided walkthrough were significantly more likely to return.
+
+The revenue impact was indirect but meaningful: by Q3 2024, the sales team reported that trial-to-paid conversion improved by 18%, which they attributed to users arriving at sales conversations with a much stronger understanding of the product.
+
+---
+
+## 08 — What I Learned
+
+**Organizational alignment is harder than design.** The original 14-step onboarding existed because every team had lobbied for their data point. Removing those steps required buy-in from marketing, sales, and customer success. I spent as much time on internal alignment as I did on user research.
+
+**Templates are a product, not a shortcut.** Building templates that are both educational and functional required careful content design. A bad template teaches nothing; a great template creates an "I could build this" moment.
+
+**Metrics need context.** The old onboarding had high completion rates for step 1 — but that's meaningless if the overall funnel bleeds out by step 3. I restructured our dashboard to track activation rate (reaching the aha moment) rather than onboarding completion (reaching the dashboard).
+
+---
+
+## 09 — Reflection
+
+If I were to revisit this project, I'd invest more in the post-activation experience. We nailed the first session, but the transition from "guided" to "self-directed" still has friction. Users complete the walkthrough but sometimes struggle to create their second workflow independently.
+
+I'd also explore personalized template recommendations based on signup source. Users coming from a blog post about team management have different needs than those arriving from a Google ad about automation — and the template selection screen could be smarter about this.
+
+> The core insight from this project: people need to understand value before they're willing to invest effort. Every form field you show before the "aha moment" is a tax on curiosity.

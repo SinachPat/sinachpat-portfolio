@@ -1,10 +1,11 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getWorkBySlug, getWorkSlugs } from "@/lib/mdx";
+import { getWorkBySlug, getWorkPosts, getWorkSlugs } from "@/lib/mdx";
 import { StatusTag } from "@/components/work/StatusTag";
 import { Tag } from "@/components/ui/Tag";
-import { formatDate } from "@/lib/utils";
+import { FadeIn } from "@/components/ui/FadeIn";
+import { PostNavigation } from "@/components/ui/PostNavigation";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -36,151 +37,232 @@ export default async function WorkPage({ params }: Props) {
 
   const { meta, content } = data;
 
+  // Prev / next navigation
+  const allPosts = await getWorkPosts();
+  const currentIndex = allPosts.findIndex((p) => p.slug === slug);
+  const prev = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
+  const next = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
+
   return (
     <main>
-      {/* Header */}
-      <header className="container-page pt-16 pb-10 border-b border-[var(--border)]">
-        {/* Back + breadcrumb */}
-        <div className="flex items-center gap-2 mb-8">
+      {/* ═══ Hero Section ═══ */}
+      <section className="container-page pt-12 pb-0">
+        {/* Back link */}
+        <FadeIn>
           <Link
             href="/"
-            className="text-xs transition-colors hover:text-[var(--accent)]"
+            className="inline-flex items-center gap-1 text-xs transition-colors hover:text-[var(--accent)] mb-10"
             style={{ color: "var(--text-3)" }}
+            data-cursor="pointer"
           >
-            ← Work
+            ← Back to Work
           </Link>
-        </div>
+        </FadeIn>
 
-        {/* Meta */}
-        <div className="flex flex-wrap items-center gap-2 mb-4">
-          <span
-            className="text-xs font-medium uppercase tracking-widest"
-            style={{ color: "var(--text-3)" }}
-          >
-            {meta.company}
-          </span>
-          <span style={{ color: "var(--text-3)", fontSize: "10px" }}>·</span>
-          <span className="text-xs" style={{ color: "var(--text-3)" }}>
-            {meta.year}
-          </span>
-          <span style={{ color: "var(--text-3)", fontSize: "10px" }}>·</span>
-          <StatusTag status={meta.status} />
-        </div>
+        {/* Title block */}
+        <FadeIn delay={50}>
+          <div className="flex flex-wrap items-center gap-2 mb-5">
+            <span
+              className="text-xs font-medium uppercase tracking-widest"
+              style={{ color: "var(--accent)" }}
+            >
+              {meta.company}
+            </span>
+            <span style={{ color: "var(--text-3)", fontSize: "8px" }}>●</span>
+            <StatusTag status={meta.status} />
+            <span style={{ color: "var(--text-3)", fontSize: "8px" }}>●</span>
+            <span className="text-xs" style={{ color: "var(--text-3)" }}>
+              {meta.year}
+            </span>
+          </div>
 
-        {/* Title */}
-        <h1
-          className="font-bold tracking-tight leading-tight mb-4"
-          style={{
-            fontSize: "clamp(1.75rem, 4vw, 2.75rem)",
-            color: "var(--text-1)",
-            maxWidth: "24ch",
-          }}
-        >
-          {meta.title}
-        </h1>
-
-        {/* Summary */}
-        <p
-          className="text-base leading-relaxed mb-6 max-w-xl"
-          style={{ color: "var(--text-2)" }}
-        >
-          {meta.summary}
-        </p>
-
-        {/* Tags + meta */}
-        <div className="flex flex-wrap items-center gap-3">
-          <span className="text-sm" style={{ color: "var(--text-3)" }}>
-            {meta.role}
-          </span>
-          <span style={{ color: "var(--text-3)", fontSize: "10px" }}>·</span>
-          <span className="text-sm" style={{ color: "var(--text-3)" }}>
-            {meta.duration}
-          </span>
-          {meta.tags.map((tag) => (
-            <Tag key={tag} variant="outline">
-              {tag}
-            </Tag>
-          ))}
-        </div>
-
-        {/* Metrics */}
-        {meta.metrics && meta.metrics.length > 0 && (
-          <div
-            className="grid gap-px mt-8 rounded-lg overflow-hidden border border-[var(--border)]"
+          <h1
+            className="font-bold tracking-tight leading-[1.1] mb-5"
             style={{
-              gridTemplateColumns: `repeat(${meta.metrics.length}, 1fr)`,
-              backgroundColor: "var(--border)",
+              fontSize: "clamp(2rem, 5vw, 3.25rem)",
+              color: "var(--text-1)",
+              maxWidth: "20ch",
             }}
           >
-            {meta.metrics.map((m) => (
+            {meta.title}
+          </h1>
+
+          <p
+            className="text-lg leading-relaxed mb-10"
+            style={{ color: "var(--text-2)", maxWidth: "56ch" }}
+          >
+            {meta.summary}
+          </p>
+        </FadeIn>
+
+        {/* ═══ Metadata Grid (Rachel Chen style) ═══ */}
+        <FadeIn delay={120}>
+          <div
+            className="grid grid-cols-2 sm:grid-cols-4 gap-px rounded-lg overflow-hidden border border-[var(--border)]"
+            style={{ backgroundColor: "var(--border)" }}
+          >
+            {[
+              { label: "Role", value: meta.role },
+              { label: "Timeline", value: meta.duration },
+              { label: "Company", value: meta.company },
+              {
+                label: "Tools",
+                value: meta.tags.slice(0, 3).join(", "),
+              },
+            ].map((item) => (
               <div
-                key={m.label}
-                className="px-5 py-5 text-center"
+                key={item.label}
+                className="px-5 py-5"
                 style={{ backgroundColor: "var(--surface)" }}
               >
                 <p
                   className="text-xs font-medium uppercase tracking-widest mb-2"
                   style={{ color: "var(--text-3)" }}
                 >
-                  {m.label}
+                  {item.label}
                 </p>
-                <div className="flex items-center justify-center gap-2">
-                  <span
-                    className="text-base font-medium tabular-nums"
-                    style={{
-                      color: "var(--text-3)",
-                      textDecoration: "line-through",
-                    }}
-                  >
-                    {m.before}
-                  </span>
-                  <span style={{ color: "var(--text-3)", fontSize: "12px" }}>
-                    →
-                  </span>
-                  <span
-                    className="text-xl font-bold tabular-nums"
-                    style={{ color: "var(--accent)" }}
-                  >
-                    {m.after}
-                  </span>
-                </div>
+                <p
+                  className="text-sm font-medium"
+                  style={{ color: "var(--text-1)" }}
+                >
+                  {item.value}
+                </p>
               </div>
             ))}
           </div>
-        )}
-      </header>
+        </FadeIn>
+      </section>
 
-      {/* MDX content */}
-      <div className="container-page py-12">
-        <div
-          className="prose"
-          style={{ maxWidth: "65ch" }}
-        >
+      {/* ═══ Cover Image ═══ */}
+      <FadeIn delay={180}>
+        <section className="container-page mt-12">
+          <div
+            className="w-full aspect-[16/7] rounded-xl overflow-hidden border border-[var(--border)]"
+            style={{ backgroundColor: "var(--gray-1)" }}
+          >
+            {meta.coverImage && meta.coverImage !== "/images/work/onboarding-cover.jpg" ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={meta.coverImage}
+                alt={`${meta.title} cover`}
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <div className="w-full h-full flex flex-col items-center justify-center gap-3">
+                <span className="text-4xl opacity-15">◈</span>
+                <span
+                  className="text-xs font-medium uppercase tracking-widest"
+                  style={{ color: "var(--text-3)", opacity: 0.5 }}
+                >
+                  Cover Image
+                </span>
+              </div>
+            )}
+          </div>
+        </section>
+      </FadeIn>
+
+      {/* ═══ Metrics Strip ═══ */}
+      {meta.metrics && meta.metrics.length > 0 && (
+        <FadeIn delay={220}>
+          <section className="container-page mt-10">
+            <div
+              className="grid gap-px rounded-lg overflow-hidden border border-[var(--border)]"
+              style={{
+                gridTemplateColumns: `repeat(${meta.metrics.length}, 1fr)`,
+                backgroundColor: "var(--border)",
+              }}
+            >
+              {meta.metrics.map((m) => (
+                <div
+                  key={m.label}
+                  className="px-6 py-6 text-center"
+                  style={{ backgroundColor: "var(--surface)" }}
+                >
+                  <p
+                    className="text-xs font-medium uppercase tracking-widest mb-3"
+                    style={{ color: "var(--text-3)" }}
+                  >
+                    {m.label}
+                  </p>
+                  <div className="flex items-baseline justify-center gap-2">
+                    <span
+                      className="text-lg font-medium tabular-nums"
+                      style={{
+                        color: "var(--text-3)",
+                        textDecoration: "line-through",
+                      }}
+                    >
+                      {m.before}
+                    </span>
+                    <span
+                      className="text-xs"
+                      style={{ color: "var(--text-3)" }}
+                    >
+                      →
+                    </span>
+                    <span
+                      className="text-2xl font-bold tabular-nums"
+                      style={{ color: "var(--accent)" }}
+                    >
+                      {m.after}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        </FadeIn>
+      )}
+
+      {/* ═══ MDX Body ═══ */}
+      <section className="container-page mt-16 pb-24">
+        <div className="case-study-content prose" style={{ maxWidth: "68ch" }}>
           {content}
         </div>
 
-        {/* Footer links */}
-        <div className="mt-12 pt-8 border-t border-[var(--border)] flex items-center justify-between">
-          <Link
-            href="/"
-            className="text-sm transition-colors hover:text-[var(--accent)]"
-            style={{ color: "var(--text-2)" }}
+        {/* Tags */}
+        <div className="mt-16 pt-8 border-t border-[var(--border)]">
+          <p
+            className="text-xs font-medium uppercase tracking-widest mb-4"
+            style={{ color: "var(--text-3)" }}
           >
-            ← All Work
-          </Link>
-          {meta.externalUrl && (
+            Filed under
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {meta.tags.map((tag) => (
+              <Tag key={tag} variant="outline">
+                {tag}
+              </Tag>
+            ))}
+          </div>
+        </div>
+
+        {/* View Live link (if available) */}
+        {meta.externalUrl && (
+          <div className="mt-6 pt-0">
             <a
               href={meta.externalUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm transition-colors hover:text-[var(--accent)]"
+              className="inline-flex items-center gap-1 text-sm font-medium transition-colors hover:text-[var(--accent)]"
               style={{ color: "var(--text-2)" }}
+              data-cursor="pointer"
             >
               View Live ↗
             </a>
-          )}
-        </div>
-      </div>
+          </div>
+        )}
+
+        {/* Prev / Next navigation */}
+        <PostNavigation
+          prev={prev ? { title: prev.title, slug: prev.slug } : null}
+          next={next ? { title: next.title, slug: next.slug } : null}
+          basePath="/work"
+          allPath="/"
+          allLabel="All Work"
+        />
+      </section>
     </main>
   );
 }

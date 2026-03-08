@@ -17,7 +17,7 @@ const links = [
   },
   {
     href: "/play",
-    label: "Play",
+    label: "Playground",
     match: (p: string) => p.startsWith("/play"),
   },
   {

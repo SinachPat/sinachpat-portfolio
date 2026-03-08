@@ -279,3 +279,140 @@ body {
   border-radius: 8px;
   border: 1px solid var(--border);
 }
+
+/* ═══════════════════════════════════════════════════
+   CASE STUDY PROSE (Rachel Chen-inspired)
+   — Numbered section headers
+   — Generous vertical rhythm
+   — Full-width image breakouts
+   — Callout/quote styling
+   ═══════════════════════════════════════════════════ */
+
+.case-study-content.prose h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-top: 4rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-1);
+}
+
+.case-study-content.prose h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-1);
+}
+
+.case-study-content.prose > p:first-of-type {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: var(--text-1);
+}
+
+.case-study-content.prose p {
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+}
+
+.case-study-content.prose blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 1.25rem 1.5rem;
+  margin: 2.5rem 0;
+  background: var(--gray-1);
+  border-radius: 0 8px 8px 0;
+  font-style: normal;
+}
+
+.case-study-content.prose blockquote p {
+  color: var(--text-1);
+  font-weight: 500;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.case-study-content.prose strong {
+  color: var(--text-1);
+  font-weight: 600;
+}
+
+.case-study-content.prose ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 1.5rem 0;
+}
+
+.case-study-content.prose ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.8;
+}
+
+.case-study-content.prose ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.case-study-content.prose ol {
+  list-style: none;
+  padding-left: 0;
+  counter-reset: step;
+  margin: 1.5rem 0;
+}
+
+.case-study-content.prose ol li {
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+  counter-increment: step;
+}
+
+.case-study-content.prose ol li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Full-width image breakout within case study */
+.case-study-content.prose img {
+  width: calc(100% + 4rem);
+  max-width: calc(100% + 4rem);
+  margin-left: -2rem;
+  margin-right: -2rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 640px) {
+  .case-study-content.prose img {
+    width: calc(100% + 2.5rem);
+    max-width: calc(100% + 2.5rem);
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+  }
+}
+
+/* Horizontal rule as section divider */
+.case-study-content.prose hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 3.5rem 0;
+}
