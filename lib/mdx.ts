@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { compileMDX } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
-import type { WorkFrontmatter, TeardownFrontmatter } from "./types";
+import type { WorkFrontmatter, TeardownFrontmatter, PlayItem } from "./types";
 
 const CONTENT_ROOT = path.join(process.cwd(), "content");
 
@@ -87,6 +87,48 @@ export async function getTeardownBySlug(slug: string) {
 
 export function getTeardownSlugs(): string[] {
   const dir = path.join(CONTENT_ROOT, "teardowns");
+  if (!fs.existsSync(dir)) return [];
+  return fs
+    .readdirSync(dir)
+    .filter((f) => f.endsWith(".mdx"))
+    .map((f) => f.replace(/\.mdx$/, ""));
+}
+
+// ─── Play ─────────────────────────────────────────────────────────────────────
+
+export async function getPlayPosts(): Promise<PlayItem[]> {
+  const dir = path.join(CONTENT_ROOT, "play");
+  if (!fs.existsSync(dir)) return [];
+
+  const files = fs.readdirSync(dir).filter((f) => f.endsWith(".mdx"));
+  return files
+    .map((file) => {
+      const raw = fs.readFileSync(path.join(dir, file), "utf-8");
+      const { data } = matter(raw);
+      return data as PlayItem;
+    })
+    .sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
+}
+
+export async function getPlayBySlug(slug: string) {
+  const filePath = path.join(CONTENT_ROOT, "play", `${slug}.mdx`);
+  const raw = fs.readFileSync(filePath, "utf-8");
+  const { content, data } = matter(raw);
+
+  const { content: compiled } = await compileMDX({
+    source: content,
+    options: {
+      mdxOptions: {
+        remarkPlugins: [remarkGfm],
+      },
+    },
+  });
+
+  return { meta: data as PlayItem, content: compiled };
+}
+
+export function getPlaySlugs(): string[] {
+  const dir = path.join(CONTENT_ROOT, "play");
   if (!fs.existsSync(dir)) return [];
   return fs
     .readdirSync(dir)

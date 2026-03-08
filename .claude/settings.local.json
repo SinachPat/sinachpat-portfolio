@@ -31,7 +31,8 @@
       "Bash(npx vercel --prod --yes)",
       "Bash(git add app/globals.css app/play/page.tsx \"app/teardowns/[slug]/page.tsx\" \"app/work/[slug]/page.tsx\" components/home/WorkList.tsx components/layout/Header.tsx components/layout/NavLinks.tsx components/layout/MobileMenu.tsx components/ui/PostNavigation.tsx content/work/onboarding-redesign.mdx package-lock.json)",
       "Bash(git rm --cached content/work/sample-project.mdx)",
-      "Bash(gh repo create sinachpat-portfolio --public --source=. --remote=origin --push)"
+      "Bash(gh repo create sinachpat-portfolio --public --source=. --remote=origin --push)",
+      "Bash(git push origin main)"
     ]
   }
 }

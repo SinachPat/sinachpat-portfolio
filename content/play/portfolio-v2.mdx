@@ -1,0 +1,39 @@
+---
+title: "Portfolio v2"
+slug: "portfolio-v2"
+description: "This site. Built with Next.js 16, Tailwind CSS v4, and MDX. Design-system-first — every token, component, and animation hand-rolled. A learning exercise in building with precision."
+tags: ["Next.js", "Tailwind v4", "MDX", "Design System"]
+year: 2024
+status: "live"
+category: "Site"
+url: "https://sinachpat-portfolio.vercel.app"
+---
+
+## Overview
+
+This is the very site you're reading right now. I built it from scratch as a deliberate exercise in building with precision — no templates, no starter kits, no third-party component libraries. Every design token, animation, and layout decision was hand-rolled.
+
+## Why build from scratch?
+
+Most portfolio sites reach for an off-the-shelf solution. That's fine — but I wanted to close the gap between how I think about design systems at work and how I actually build one in code. This site is that experiment.
+
+## Stack decisions
+
+**Next.js 16 App Router** — I wanted RSC (React Server Components) to handle MDX compilation on the server, keeping the client bundle light.
+
+**Tailwind CSS v4 (CSS-first)** — No `tailwind.config.js`. All design tokens live in `app/globals.css` using `@theme {}` and CSS custom properties. The result: a proper design token system that works in both Tailwind utilities and raw CSS.
+
+**next-mdx-remote v6** — MDX compiled at build time via `compileMDX`. Case studies and teardowns live as `.mdx` files in `content/`, making it trivial to add new entries without touching any React code.
+
+**Framer Motion** — Used sparingly: page transitions, FadeIn scroll reveals, and the mobile menu slide-in. Nothing flashy.
+
+## Design system highlights
+
+- **Electric Teal** (`#0ABFBC`) as the single accent colour — readable on both light and dark backgrounds, uncommon in product portfolios
+- **Three-layer theming**: `prefers-color-scheme` media query for zero-flash defaults, `[data-theme]` attribute for manual overrides, and an inline script in `layout.tsx` to read `localStorage` before hydration
+- **Custom cursor**: 4px dot + 32px ring with spring lag — disabled on touch devices
+- **FadeIn primitive**: Intersection Observer–based, respects `prefers-reduced-motion`
+
+## What I learned
+
+Building your own design system, even a small one, forces you to make decisions you usually defer to a library. What should `--text-2` actually feel like? When does a shadow earn its place? How do you make a type scale that holds at every viewport width? Answering those questions in code is a different kind of thinking — and a useful one.

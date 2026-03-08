@@ -1,0 +1,39 @@
+---
+title: "Onboarding Annotator"
+slug: "onboarding-annotator"
+description: "Upload screenshots of any app's onboarding flow and annotate friction points, clarity gaps, and delight moments directly on the canvas. Lightweight teardown tooling."
+tags: ["Canvas API", "TypeScript", "UX Research"]
+year: 2024
+status: "in-progress"
+category: "Tool"
+---
+
+## The idea
+
+When I do product teardowns, I screenshot onboarding flows and then... open Figma or Notion to annotate them. That's two apps when it should be one. The Onboarding Annotator is a focused single-purpose tool: upload screenshots, annotate directly on the canvas, export a marked-up PDF.
+
+## Annotation types
+
+Three annotation modes, each with a distinct visual treatment:
+
+- 🔴 **Friction point** — something that slows the user down, confuses them, or creates unnecessary cognitive load
+- 🟡 **Clarity gap** — copy, layout, or hierarchy that doesn't communicate clearly
+- 🟢 **Delight moment** — something that genuinely earns the user's trust or makes them smile
+
+Each annotation gets a text note. The final export shows the original screenshot with colour-coded markers and a numbered legend.
+
+## Technical approach
+
+The canvas is built on the native **Canvas 2D API** — no Fabric.js, no Konva. I wanted to understand how annotation tools actually work under the hood. You're essentially managing a layer of annotation objects on top of a rasterised image, handling hit-testing for selection, and re-rendering on every state change.
+
+It's more involved than reaching for a library, but the result is a bundle with zero dependencies.
+
+## Current state
+
+Working: image upload, placing friction/clarity/delight markers, text notes, zoom in/out.
+
+In progress: drag to reposition markers, export to annotated PNG, keyboard shortcuts for annotation mode switching.
+
+## Why bother?
+
+Teardowns are one of the best ways to sharpen product thinking. Making the tooling faster reduces the friction between "I want to analyse this flow" and actually doing it. That's worth building.

@@ -1,0 +1,39 @@
+---
+title: "Feature Scorer"
+slug: "feature-scorer"
+description: "Lightweight feature prioritisation using impact × effort scoring. Add candidates, adjust weights, drag to reorder, export to CSV. No spreadsheet required."
+tags: ["Product Tool", "TypeScript", "React"]
+year: 2024
+status: "shipped"
+category: "Tool"
+---
+
+## The problem
+
+Feature prioritisation frameworks exist everywhere — RICE, ICE, MoSCoW, Kano. The problem isn't the framework. The problem is the spreadsheet.
+
+Every time I join a new team or start a new prioritisation exercise, someone opens Google Sheets, pastes a list of features, and we spend the first 20 minutes wrangling formulas and formatting before we can even start scoring.
+
+I wanted a tool that skips that step entirely.
+
+## How it works
+
+Feature Scorer is a single-page web app. You:
+
+1. **Add feature candidates** — paste or type them in
+2. **Score each one** — impact (1–10) and effort (1–10)
+3. **Adjust weights** — want impact to count for 70% and effort for 30%? Done
+4. **See ranked results instantly** — sorted by weighted score
+5. **Export to CSV** — one click, clean output ready for stakeholders
+
+There's no account, no login, no cloud sync. It's a tool you open, use, and close.
+
+## Technical notes
+
+Built with React and TypeScript. State lives entirely in the component — no external store, no backend. The scoring formula is configurable at runtime via a simple weight slider.
+
+The CSV export uses the browser's native `Blob` + `URL.createObjectURL` — no library required.
+
+## What I learned
+
+Sometimes the right scope for a tool is very small. Feature Scorer does exactly one thing and doesn't apologise for it. The constraint of "no backend, no auth, no persistence" actually made the design clearer — every decision came back to: does this help someone score features right now?

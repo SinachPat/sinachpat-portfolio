@@ -1,0 +1,48 @@
+---
+title: "Type Scale Playground"
+slug: "type-scale-playground"
+description: "Adjust base size, modular ratio, and font weight in real time and watch your typographic hierarchy respond. Generates a ready-to-copy CSS custom property file."
+tags: ["Typography", "CSS", "Design Tool"]
+year: 2023
+status: "shipped"
+category: "Design"
+---
+
+## Background
+
+I've always been frustrated by the gap between picking a type scale in a design tool and actually implementing it in code. In Figma you drag a slider. In CSS you write eight custom properties by hand and pray the maths holds at every viewport width.
+
+This tool bridges that gap.
+
+## What it does
+
+The Type Scale Playground gives you three controls:
+
+- **Base size** — your body text size in px (default: 16)
+- **Modular ratio** — the multiplier between each step (e.g. 1.25 = Major Third, 1.5 = Perfect Fifth)
+- **Font weight pair** — body weight vs. heading weight
+
+Change any of these and the entire typographic hierarchy re-renders in real time. You see every step — from `--text-xs` to `--text-5xl` — at the correct relative size, rendered in Inter with live sample text.
+
+When you're happy, click **Copy CSS** and you get a ready-to-paste block of CSS custom properties:
+
+```css
+:root {
+  --text-xs:   11px;
+  --text-sm:   13.75px;
+  --text-base: 16px;
+  --text-lg:   20px;
+  --text-xl:   25px;
+  --text-2xl:  31.25px;
+  --text-3xl:  39.06px;
+  --text-4xl:  48.83px;
+}
+```
+
+## Why modular scales?
+
+A modular scale isn't the only way to build a type system — but it's a principled one. The maths gives you visual harmony that's hard to achieve when you're picking sizes arbitrarily. Scales like the Perfect Fourth (1.333) or Major Third (1.25) appear in a lot of well-designed systems for good reason.
+
+## What I learned
+
+Building live CSS generators is a great forcing function for understanding the cascade. You can't fake it — the output has to be valid and copy-paste ready. I also gained a much sharper intuition for how small changes in ratio produce dramatically different visual hierarchies.

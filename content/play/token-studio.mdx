@@ -1,0 +1,39 @@
+---
+title: "Token Studio"
+slug: "token-studio"
+description: "Paste in a design token JSON file and explore your entire palette, type scale, and spacing system rendered visually. Built to close the gap between design and code token reviews."
+tags: ["Design Tokens", "TypeScript", "Dev Tool"]
+year: 2023
+status: "archived"
+category: "Tool"
+---
+
+## Context
+
+Design tokens — the JSON dictionaries that store colour, spacing, and typography values — are increasingly standard in larger product teams. But reviewing a token file is painful. You're reading hex codes and pixel values in a text editor, trying to mentally render what they look like.
+
+Token Studio was a tool to solve that. Paste in a token JSON, see your system rendered visually.
+
+## What it did
+
+Given a token file (W3C Design Token format or Figma Tokens format), Token Studio would render:
+
+- **Colour palette** — every colour swatch with its name and hex value, grouped by category (primitive, semantic, component)
+- **Type scale** — each font size token rendered with sample text
+- **Spacing system** — visual ruler showing each spacing step
+- **Border radius** — shapes rendered at each corner radius value
+
+It was read-only — no editing. The goal was inspection and review, not authoring.
+
+## Why it's archived
+
+The tool worked and was genuinely useful for a few months. I archived it for two reasons:
+
+1. **Better tools appeared.** Token Pipeline and similar tools now do this better, with more format support and editor integrations I never built.
+2. **The problem space moved.** With Figma Variables and CSS custom properties converging, the awkward middle layer this tool occupied is getting thinner.
+
+## What I learned
+
+Token Studio was my first serious project with the W3C Design Token spec. Understanding the difference between primitive tokens (`color.blue.500 = #3B82F6`), semantic tokens (`color.interactive.default = {color.blue.500}`), and component tokens (`button.background = {color.interactive.default}`) changed how I think about theming entirely.
+
+Even archived projects leave something useful behind.

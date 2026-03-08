@@ -31,11 +31,12 @@ export interface TeardownFrontmatter {
 
 export interface PlayItem {
   title: string;
+  slug: string;
   description: string;
   tags: string[];
   year: number;
   status: "live" | "in-progress" | "archived" | "shipped";
-  category: string; // e.g. "Tool", "Prototype", "Design", "App"
+  category: string;
   url?: string;
   image?: string;
 }

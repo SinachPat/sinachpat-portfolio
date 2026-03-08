@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { StatusTag } from "@/components/work/StatusTag";
 import { Tag } from "@/components/ui/Tag";
@@ -61,10 +62,7 @@ function PlayCard({ item, index }: { item: PlayItem; index: number }) {
               {item.year}
             </span>
             <span style={{ color: "var(--text-3)", fontSize: "4px" }}>●</span>
-            <span
-              className="text-xs"
-              style={{ color: "var(--text-3)" }}
-            >
+            <span className="text-xs" style={{ color: "var(--text-3)" }}>
               {item.category}
             </span>
           </div>
@@ -89,21 +87,11 @@ function PlayCard({ item, index }: { item: PlayItem; index: number }) {
           {item.description}
         </p>
 
-        {/* Tags + optional external link */}
-        <div className="flex items-center justify-between gap-2">
-          <div className="flex flex-wrap gap-1.5">
-            {item.tags.slice(0, 3).map((tag) => (
-              <Tag key={tag}>{tag}</Tag>
-            ))}
-          </div>
-          {item.url && (
-            <span
-              className="text-xs shrink-0 transition-colors"
-              style={{ color: hovered ? "var(--accent)" : "var(--text-3)" }}
-            >
-              ↗
-            </span>
-          )}
+        {/* Tags */}
+        <div className="flex flex-wrap gap-1.5">
+          {item.tags.slice(0, 3).map((tag) => (
+            <Tag key={tag}>{tag}</Tag>
+          ))}
         </div>
       </div>
     </div>
@@ -111,19 +99,9 @@ function PlayCard({ item, index }: { item: PlayItem; index: number }) {
 
   return (
     <FadeIn key={item.title} delay={index * 70}>
-      {item.url ? (
-        <a
-          href={item.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block"
-          data-cursor="pointer"
-        >
-          {inner}
-        </a>
-      ) : (
-        <div>{inner}</div>
-      )}
+      <Link href={`/play/${item.slug}`} className="block" data-cursor="pointer">
+        {inner}
+      </Link>
     </FadeIn>
   );
 }
