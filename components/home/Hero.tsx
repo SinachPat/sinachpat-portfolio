@@ -14,14 +14,14 @@ export function Hero() {
 
       <FadeIn delay={80}>
         <h1
-          className="font-bold leading-tight tracking-tight mb-8 w-4xl"
+          className="font-bold leading-tight tracking-tight mb-8 w-8xl"
           style={{
-            fontSize: "clamp(2.5rem, 14vw, 4rem)",
+            fontSize: "clamp(2.5rem, 16vw, 4rem)",
             color: "var(--text-1)",
           }}
         >
           Product guy who builds, designs
-          <span style={{ color: "var(--accent)" }}>and engineers.</span>
+          <span style={{ color: "var(--accent)" }}> and engineers.</span>
         </h1>
       </FadeIn>
 
