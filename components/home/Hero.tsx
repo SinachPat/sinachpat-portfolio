@@ -21,7 +21,7 @@ export function Hero() {
           }}
         >
           Product guy who builds, designs
-          <span style={{ color: "var(--accent)" }}> <br> and engineers.</br></span>
+          <span style={{ color: "var(--accent)" }}> <br /> and engineers.</span>
         </h1>
       </FadeIn>
 
