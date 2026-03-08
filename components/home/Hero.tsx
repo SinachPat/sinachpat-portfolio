@@ -21,13 +21,13 @@ export function Hero() {
           }}
         >
           Product guy who builds, designs
-          <span style={{ color: "var(--accent)" }}> and engineers.</span>
+          <span style={{ color: "var(--accent)" }}> <br> and engineers.</br></span>
         </h1>
       </FadeIn>
 
       <FadeIn delay={160}>
         <p
-          className="text-base leading-relaxed max-w-lg w-4xl"
+          className="text-base leading-relaxed max-w-lg w-10xl"
           style={{ color: "var(--text-2)" }}
         >
           I&apos;m Osinachi Patrick — I work at the intersection of product
