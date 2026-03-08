@@ -16,7 +16,7 @@ export function Hero() {
         <h1
           className="font-bold leading-tight tracking-tight mb-8"
           style={{
-            fontSize: "clamp(2.5rem, 16vw, 6rem)",
+            fontSize: "clamp(2.5rem, 18vw, 4rem)",
             color: "var(--text-1)",
           }}
         >
