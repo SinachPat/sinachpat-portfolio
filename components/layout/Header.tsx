@@ -21,7 +21,7 @@ export function Header() {
           style={{ color: "var(--text-1)" }}
           data-cursor="pointer"
         >
-          OP
+          PRODUCT DESIGNER & BUILDER
         </Link>
 
         {/* Navigation */}
