@@ -1,0 +1,124 @@
+import type { Metadata } from "next";
+import { FadeIn } from "@/components/ui/FadeIn";
+import { Tag } from "@/components/ui/Tag";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "About Osinachi Patrick — product guy who builds, designs and engineers.",
+};
+
+const SKILLS = [
+  "Product Strategy",
+  "UX Design",
+  "Figma",
+  "React / Next.js",
+  "TypeScript",
+  "User Research",
+  "0→1 Products",
+  "Design Systems",
+  "Data Analysis",
+  "Prototyping",
+];
+
+export default function AboutPage() {
+  return (
+    <main>
+      <section className="container-page pt-16 pb-24">
+        <div className="grid-12">
+          {/* Left: bio */}
+          <div
+            className="col-span-12 lg:col-span-7"
+            style={{ gridColumn: "1 / span 7" }}
+          >
+            <FadeIn>
+              <p
+                className="text-xs font-medium uppercase tracking-widest mb-6"
+                style={{ color: "var(--text-3)" }}
+              >
+                About
+              </p>
+              <h1
+                className="font-bold tracking-tight mb-8"
+                style={{
+                  fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
+                  color: "var(--text-1)",
+                }}
+              >
+                Osinachi Patrick
+              </h1>
+            </FadeIn>
+
+            <FadeIn delay={80}>
+              <div
+                className="space-y-4 text-base leading-relaxed"
+                style={{ color: "var(--text-2)" }}
+              >
+                <p>
+                  I&apos;m a product person who lives at the intersection of
+                  strategy, design, and engineering. I believe the best
+                  products come from people who can hold all three in their
+                  head at once — and I&apos;ve spent my career building that
+                  muscle.
+                </p>
+                <p>
+                  I&apos;ve worked on 0→1 products, led design systems, run
+                  user research, and shipped production code. I&apos;m most
+                  energized when working on problems where the user need is
+                  clear but the solution isn&apos;t.
+                </p>
+                <p>
+                  Outside of work, I write teardowns of products I find
+                  interesting, build small experiments, and think deeply about
+                  how digital products shape behavior.
+                </p>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={160}>
+              <div className="mt-10">
+                <p
+                  className="text-xs font-medium uppercase tracking-widest mb-4"
+                  style={{ color: "var(--text-3)" }}
+                >
+                  Skills & Tools
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {SKILLS.map((skill) => (
+                    <Tag key={skill} variant="outline">
+                      {skill}
+                    </Tag>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+
+          {/* Right: photo placeholder */}
+          <div
+            className="col-span-12 lg:col-span-4 lg:col-start-9 mt-8 lg:mt-0"
+            style={{ gridColumn: "9 / span 4" }}
+          >
+            <FadeIn delay={100} direction="none">
+              <div
+                className="aspect-square rounded-lg overflow-hidden border border-[var(--border)]"
+                style={{ backgroundColor: "var(--gray-1)" }}
+              >
+                {/* Replace with next/image when you have a photo */}
+                <div className="w-full h-full flex items-center justify-center">
+                  <span className="text-4xl opacity-20">◉</span>
+                </div>
+              </div>
+              <p
+                className="text-xs mt-3 text-center"
+                style={{ color: "var(--text-3)" }}
+              >
+                Photo coming soon
+              </p>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}

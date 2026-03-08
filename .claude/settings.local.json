@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.rachelchen.tech)",
+      "WebFetch(domain:yichenjia.github.io)",
+      "WebFetch(domain:tash.work)",
+      "WebFetch(domain:www.liumichelle.com)",
+      "Bash(node --version)",
+      "Bash(npm --version)",
+      "Bash(npm info next version)",
+      "Bash(npm info tailwindcss version)",
+      "Bash(npm info @next/mdx version)",
+      "Bash(npm info next-mdx-remote version)",
+      "Bash(npm info framer-motion version)",
+      "Bash(npm info contentlayer2 version)",
+      "Bash(npm info velite version)",
+      "Bash(npm info @tailwindcss/typography version)",
+      "Bash(npm info sharp version)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --app --no-src-dir --no-eslint --import-alias \"@/*\")",
+      "Bash(npm install framer-motion next-mdx-remote gray-matter rehype-pretty-code remark-gfm shiki clsx tailwind-merge)",
+      "Bash(npm install -D @next/mdx @tailwindcss/typography sharp)",
+      "Bash(npm run build)",
+      "Bash(npm install)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(git init)",
+      "Bash(git add -A)"
+    ]
+  }
+}

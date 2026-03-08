@@ -1,5 +1,5 @@
 {
-  "name": "sinachpat-portfolio-new",
+  "name": "sinachpat-portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,15 +8,26 @@
     "start": "next start"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.35.1",
+    "gray-matter": "^4.0.3",
     "next": "16.1.6",
+    "next-mdx-remote": "^6.0.0",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "rehype-pretty-code": "^0.14.3",
+    "remark-gfm": "^4.0.1",
+    "shiki": "^4.0.1",
+    "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
+    "@next/mdx": "^16.1.6",
     "@tailwindcss/postcss": "^4",
+    "@tailwindcss/typography": "^0.5.19",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
