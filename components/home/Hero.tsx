@@ -14,7 +14,7 @@ export function Hero() {
 
       <FadeIn delay={80}>
         <h1
-          className="font-bold leading-tight tracking-tight mb-8"
+          className="font-bold leading-tight tracking-tight mb-8 w-4xl"
           style={{
             fontSize: "clamp(2.5rem, 18vw, 4rem)",
             color: "var(--text-1)",
@@ -30,7 +30,7 @@ export function Hero() {
 
       <FadeIn delay={160}>
         <p
-          className="text-base leading-relaxed max-w-lg"
+          className="text-base leading-relaxed max-w-lg w-4xl"
           style={{ color: "var(--text-2)" }}
         >
           I&apos;m Osinachi Patrick — I work at the intersection of product
