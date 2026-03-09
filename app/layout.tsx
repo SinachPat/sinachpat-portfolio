@@ -33,19 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={inter.variable}>
-      <head>
-        {/*
-         * Anti-FOUC script: runs synchronously before paint.
-         * Reads localStorage theme preference and sets data-theme on <html>
-         * before React hydrates, preventing flash of wrong color scheme.
-         */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',t||(d?'dark':'light'));}catch(e){}})();`,
-          }}
-        />
-      </head>
+    <html lang="en" className={inter.variable}>
       <body
         className="antialiased min-h-screen flex flex-col"
         style={{ backgroundColor: "var(--bg)", color: "var(--text-1)" }}
