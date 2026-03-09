@@ -44,8 +44,7 @@ export function WorkList({ posts }: WorkListProps) {
                   className="w-full aspect-[16/9] overflow-hidden"
                   style={{ backgroundColor: "var(--gray-1)" }}
                 >
-                  {post.coverImage &&
-                  post.coverImage !== "/images/work/onboarding-cover.jpg" ? (
+                  {post.coverImage ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       src={post.coverImage}

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none">
+  <rect width="1600" height="900" fill="#0F1117"/>
+  <!-- Grid lines -->
+  <line x1="0" y1="150" x2="1600" y2="150" stroke="#1A1D26" stroke-width="1"/>
+  <line x1="0" y1="300" x2="1600" y2="300" stroke="#1A1D26" stroke-width="1"/>
+  <line x1="0" y1="450" x2="1600" y2="450" stroke="#1A1D26" stroke-width="1"/>
+  <line x1="0" y1="600" x2="1600" y2="600" stroke="#1A1D26" stroke-width="1"/>
+  <line x1="0" y1="750" x2="1600" y2="750" stroke="#1A1D26" stroke-width="1"/>
+  <line x1="200" y1="0" x2="200" y2="900" stroke="#1A1D26" stroke-width="1"/>
+  <line x1="400" y1="0" x2="400" y2="900" stroke="#1A1D26" stroke-width="1"/>
+  <line x1="600" y1="0" x2="600" y2="900" stroke="#1A1D26" stroke-width="1"/>
+  <line x1="800" y1="0" x2="800" y2="900" stroke="#1A1D26" stroke-width="1"/>
+  <line x1="1000" y1="0" x2="1000" y2="900" stroke="#1A1D26" stroke-width="1"/>
+  <line x1="1200" y1="0" x2="1200" y2="900" stroke="#1A1D26" stroke-width="1"/>
+  <line x1="1400" y1="0" x2="1400" y2="900" stroke="#1A1D26" stroke-width="1"/>
+  <!-- Calendar cards -->
+  <rect x="160" y="180" width="380" height="240" rx="12" fill="#161820" stroke="#252830" stroke-width="1"/>
+  <rect x="172" y="192" width="356" height="48" rx="8" fill="#1E2130"/>
+  <rect x="184" y="204" width="80" height="8" rx="4" fill="#0ABFBC" opacity="0.8"/>
+  <rect x="184" y="218" width="120" height="6" rx="3" fill="#ffffff" opacity="0.12"/>
+  <rect x="172" y="252" width="80" height="72" rx="6" fill="#0ABFBC" opacity="0.1"/>
+  <rect x="264" y="252" width="80" height="72" rx="6" fill="#1E2130"/>
+  <rect x="356" y="252" width="80" height="72" rx="6" fill="#1E2130"/>
+  <rect x="172" y="336" width="80" height="72" rx="6" fill="#1E2130"/>
+  <rect x="264" y="336" width="80" height="72" rx="6" fill="#0ABFBC" opacity="0.06"/>
+  <rect x="356" y="336" width="80" height="72" rx="6" fill="#1E2130"/>
+  <rect x="172" y="256" width="40" height="8" rx="4" fill="#0ABFBC" opacity="0.6"/>
+  <rect x="172" y="270" width="60" height="6" rx="3" fill="#ffffff" opacity="0.08"/>
+  <!-- Calendar card 2 -->
+  <rect x="580" y="140" width="380" height="240" rx="12" fill="#161820" stroke="#252830" stroke-width="1"/>
+  <rect x="592" y="152" width="356" height="48" rx="8" fill="#1E2130"/>
+  <rect x="604" y="164" width="80" height="8" rx="4" fill="#7C6FF7" opacity="0.8"/>
+  <rect x="604" y="178" width="120" height="6" rx="3" fill="#ffffff" opacity="0.12"/>
+  <rect x="592" y="212" width="80" height="72" rx="6" fill="#1E2130"/>
+  <rect x="684" y="212" width="80" height="72" rx="6" fill="#7C6FF7" opacity="0.1"/>
+  <rect x="776" y="212" width="80" height="72" rx="6" fill="#1E2130"/>
+  <rect x="592" y="296" width="80" height="72" rx="6" fill="#1E2130"/>
+  <rect x="684" y="296" width="80" height="72" rx="6" fill="#1E2130"/>
+  <rect x="776" y="296" width="80" height="72" rx="6" fill="#7C6FF7" opacity="0.06"/>
+  <rect x="684" y="216" width="40" height="8" rx="4" fill="#7C6FF7" opacity="0.6"/>
+  <rect x="684" y="230" width="60" height="6" rx="3" fill="#ffffff" opacity="0.08"/>
+  <!-- Calendar card 3 -->
+  <rect x="1000" y="200" width="380" height="240" rx="12" fill="#161820" stroke="#252830" stroke-width="1"/>
+  <rect x="1012" y="212" width="356" height="48" rx="8" fill="#1E2130"/>
+  <rect x="1024" y="224" width="80" height="8" rx="4" fill="#F97B5B" opacity="0.8"/>
+  <rect x="1024" y="238" width="120" height="6" rx="3" fill="#ffffff" opacity="0.12"/>
+  <rect x="1012" y="272" width="80" height="72" rx="6" fill="#1E2130"/>
+  <rect x="1104" y="272" width="80" height="72" rx="6" fill="#1E2130"/>
+  <rect x="1196" y="272" width="80" height="72" rx="6" fill="#F97B5B" opacity="0.1"/>
+  <rect x="1012" y="356" width="80" height="72" rx="6" fill="#F97B5B" opacity="0.06"/>
+  <rect x="1104" y="356" width="80" height="72" rx="6" fill="#1E2130"/>
+  <rect x="1196" y="356" width="80" height="72" rx="6" fill="#1E2130"/>
+  <rect x="1196" y="276" width="40" height="8" rx="4" fill="#F97B5B" opacity="0.6"/>
+  <rect x="1196" y="290" width="60" height="6" rx="3" fill="#ffffff" opacity="0.08"/>
+  <!-- Connecting line -->
+  <path d="M 540 300 Q 710 480 860 300" stroke="#0ABFBC" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.3" fill="none"/>
+  <path d="M 960 300 Q 1060 480 1200 320" stroke="#0ABFBC" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.3" fill="none"/>
+  <!-- Center unify panel -->
+  <rect x="580" y="480" width="440" height="180" rx="14" fill="#0ABFBC" opacity="0.08"/>
+  <rect x="580" y="480" width="440" height="180" rx="14" stroke="#0ABFBC" stroke-width="1" opacity="0.3"/>
+  <rect x="600" y="500" width="160" height="8" rx="4" fill="#0ABFBC" opacity="0.6"/>
+  <rect x="600" y="520" width="300" height="6" rx="3" fill="#ffffff" opacity="0.15"/>
+  <rect x="600" y="536" width="240" height="6" rx="3" fill="#ffffff" opacity="0.10"/>
+  <rect x="600" y="564" width="100" height="28" rx="6" fill="#0ABFBC" opacity="0.2"/>
+  <rect x="712" y="564" width="80" height="28" rx="6" fill="#ffffff" opacity="0.05"/>
+  <!-- Label -->
+  <text x="800" y="800" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#ffffff" opacity="0.2" text-anchor="middle" letter-spacing="4">UNIFIED CALENDAR · MEETWITH</text>
+</svg>

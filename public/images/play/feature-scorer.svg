@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none">
+  <rect width="1600" height="900" fill="#0F1117"/>
+  <!-- Table header -->
+  <rect x="120" y="140" width="1360" height="48" rx="8" fill="#161820"/>
+  <rect x="140" y="160" width="120" height="8" rx="4" fill="#0ABFBC" opacity="0.6"/>
+  <rect x="420" y="160" width="80" height="8" rx="4" fill="#ffffff" opacity="0.3"/>
+  <rect x="640" y="160" width="80" height="8" rx="4" fill="#ffffff" opacity="0.3"/>
+  <rect x="860" y="160" width="80" height="8" rx="4" fill="#ffffff" opacity="0.3"/>
+  <rect x="1080" y="160" width="80" height="8" rx="4" fill="#ffffff" opacity="0.3"/>
+  <rect x="1300" y="160" width="80" height="8" rx="4" fill="#ffffff" opacity="0.3"/>
+  <!-- Row 1 (highest score) -->
+  <rect x="120" y="196" width="1360" height="64" rx="0" fill="#0ABFBC" opacity="0.06"/>
+  <rect x="120" y="196" width="3" height="64" fill="#0ABFBC"/>
+  <rect x="140" y="216" width="180" height="8" rx="4" fill="#ffffff" opacity="0.5"/>
+  <rect x="140" y="230" width="120" height="6" rx="3" fill="#ffffff" opacity="0.18"/>
+  <rect x="420" y="218" width="60" height="20" rx="10" fill="#0ABFBC" opacity="0.2"/>
+  <rect x="424" y="224" width="52" height="8" rx="4" fill="#0ABFBC" opacity="0.8"/>
+  <rect x="640" y="218" width="60" height="20" rx="10" fill="#1E2130"/>
+  <rect x="644" y="224" width="52" height="8" rx="4" fill="#ffffff" opacity="0.3"/>
+  <rect x="860" y="216" width="80" height="10" rx="5" fill="#1E2130"/>
+  <rect x="860" y="216" width="68" height="10" rx="5" fill="#0ABFBC" opacity="0.6"/>
+  <rect x="1080" y="218" width="80" height="24" rx="6" fill="#0ABFBC" opacity="0.15"/>
+  <text x="1120" y="233" font-family="system-ui, sans-serif" font-size="14" fill="#0ABFBC" opacity="0.8" text-anchor="middle">9.2</text>
+  <!-- Row 2 -->
+  <rect x="120" y="268" width="1360" height="64" rx="0" fill="transparent"/>
+  <rect x="120" y="268" width="1360" height="1" fill="#1A1D26"/>
+  <rect x="140" y="288" width="160" height="8" rx="4" fill="#ffffff" opacity="0.4"/>
+  <rect x="140" y="302" width="100" height="6" rx="3" fill="#ffffff" opacity="0.15"/>
+  <rect x="420" y="290" width="60" height="20" rx="10" fill="#1E2130"/>
+  <rect x="424" y="296" width="52" height="8" rx="4" fill="#ffffff" opacity="0.25"/>
+  <rect x="640" y="290" width="60" height="20" rx="10" fill="#7C6FF7" opacity="0.2"/>
+  <rect x="644" y="296" width="52" height="8" rx="4" fill="#7C6FF7" opacity="0.7"/>
+  <rect x="860" y="288" width="80" height="10" rx="5" fill="#1E2130"/>
+  <rect x="860" y="288" width="50" height="10" rx="5" fill="#0ABFBC" opacity="0.4"/>
+  <rect x="1080" y="290" width="80" height="24" rx="6" fill="#1E2130"/>
+  <text x="1120" y="305" font-family="system-ui, sans-serif" font-size="14" fill="#ffffff" opacity="0.4" text-anchor="middle">7.8</text>
+  <!-- Row 3 -->
+  <rect x="120" y="340" width="1360" height="64" rx="0" fill="transparent"/>
+  <rect x="120" y="340" width="1360" height="1" fill="#1A1D26"/>
+  <rect x="140" y="360" width="200" height="8" rx="4" fill="#ffffff" opacity="0.35"/>
+  <rect x="140" y="374" width="140" height="6" rx="3" fill="#ffffff" opacity="0.12"/>
+  <rect x="420" y="362" width="60" height="20" rx="10" fill="#F97B5B" opacity="0.2"/>
+  <rect x="424" y="368" width="52" height="8" rx="4" fill="#F97B5B" opacity="0.7"/>
+  <rect x="640" y="362" width="60" height="20" rx="10" fill="#1E2130"/>
+  <rect x="644" y="368" width="52" height="8" rx="4" fill="#ffffff" opacity="0.25"/>
+  <rect x="860" y="360" width="80" height="10" rx="5" fill="#1E2130"/>
+  <rect x="860" y="360" width="30" height="10" rx="5" fill="#0ABFBC" opacity="0.3"/>
+  <rect x="1080" y="362" width="80" height="24" rx="6" fill="#1E2130"/>
+  <text x="1120" y="377" font-family="system-ui, sans-serif" font-size="14" fill="#ffffff" opacity="0.4" text-anchor="middle">5.1</text>
+  <!-- Row 4 -->
+  <rect x="120" y="412" width="1360" height="64" rx="0" fill="transparent"/>
+  <rect x="120" y="412" width="1360" height="1" fill="#1A1D26"/>
+  <rect x="140" y="432" width="140" height="8" rx="4" fill="#ffffff" opacity="0.3"/>
+  <rect x="140" y="446" width="100" height="6" rx="3" fill="#ffffff" opacity="0.10"/>
+  <rect x="420" y="434" width="60" height="20" rx="10" fill="#1E2130"/>
+  <rect x="424" y="440" width="52" height="8" rx="4" fill="#ffffff" opacity="0.2"/>
+  <rect x="640" y="434" width="60" height="20" rx="10" fill="#1E2130"/>
+  <rect x="644" y="440" width="52" height="8" rx="4" fill="#ffffff" opacity="0.2"/>
+  <rect x="860" y="432" width="80" height="10" rx="5" fill="#1E2130"/>
+  <rect x="860" y="432" width="20" height="10" rx="5" fill="#0ABFBC" opacity="0.2"/>
+  <rect x="1080" y="434" width="80" height="24" rx="6" fill="#1E2130"/>
+  <text x="1120" y="449" font-family="system-ui, sans-serif" font-size="14" fill="#ffffff" opacity="0.4" text-anchor="middle">3.4</text>
+  <!-- Export button -->
+  <rect x="1360" y="560" width="120" height="36" rx="8" fill="#0ABFBC" opacity="0.15"/>
+  <rect x="1360" y="560" width="120" height="36" rx="8" stroke="#0ABFBC" stroke-width="1" opacity="0.4"/>
+  <!-- Weight sliders -->
+  <rect x="120" y="560" width="580" height="180" rx="12" fill="#161820" stroke="#252830" stroke-width="1"/>
+  <rect x="140" y="580" width="100" height="8" rx="4" fill="#0ABFBC" opacity="0.6"/>
+  <rect x="140" y="608" width="60" height="6" rx="3" fill="#ffffff" opacity="0.3"/>
+  <rect x="140" y="622" width="420" height="4" rx="2" fill="#1E2130"/>
+  <rect x="140" y="622" width="280" height="4" rx="2" fill="#0ABFBC" opacity="0.5"/>
+  <circle cx="420" cy="624" r="8" fill="#0ABFBC"/>
+  <rect x="140" y="648" width="60" height="6" rx="3" fill="#ffffff" opacity="0.25"/>
+  <rect x="140" y="662" width="420" height="4" rx="2" fill="#1E2130"/>
+  <rect x="140" y="662" width="160" height="4" rx="2" fill="#0ABFBC" opacity="0.35"/>
+  <circle cx="300" cy="664" r="8" fill="#0ABFBC" opacity="0.7"/>
+  <rect x="140" y="688" width="60" height="6" rx="3" fill="#ffffff" opacity="0.2"/>
+  <rect x="140" y="702" width="420" height="4" rx="2" fill="#1E2130"/>
+  <rect x="140" y="702" width="360" height="4" rx="2" fill="#0ABFBC" opacity="0.45"/>
+  <circle cx="500" cy="704" r="8" fill="#0ABFBC" opacity="0.8"/>
+  <text x="800" y="820" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#ffffff" opacity="0.2" text-anchor="middle" letter-spacing="4">FEATURE SCORER · TOOL</text>
+</svg>

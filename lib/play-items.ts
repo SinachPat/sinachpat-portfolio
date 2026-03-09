@@ -11,6 +11,7 @@ export const PLAY_ITEMS: PlayItem[] = [
     status: "live",
     category: "Site",
     url: "https://sinachpat-portfolio.vercel.app",
+    image: "/images/play/portfolio-v2.svg",
   },
   {
     title: "Activation Simulator",
@@ -21,6 +22,7 @@ export const PLAY_ITEMS: PlayItem[] = [
     year: 2024,
     status: "in-progress",
     category: "Prototype",
+    image: "/images/play/activation-simulator.svg",
   },
   {
     title: "Feature Scorer",
@@ -31,6 +33,7 @@ export const PLAY_ITEMS: PlayItem[] = [
     year: 2024,
     status: "shipped",
     category: "Tool",
+    image: "/images/play/feature-scorer.svg",
   },
   {
     title: "Type Scale Playground",
@@ -41,6 +44,7 @@ export const PLAY_ITEMS: PlayItem[] = [
     year: 2023,
     status: "shipped",
     category: "Design",
+    image: "/images/play/type-scale-playground.svg",
   },
   {
     title: "Onboarding Annotator",
@@ -51,6 +55,7 @@ export const PLAY_ITEMS: PlayItem[] = [
     year: 2024,
     status: "in-progress",
     category: "Tool",
+    image: "/images/play/onboarding-annotator.svg",
   },
   {
     title: "Token Studio",
@@ -61,5 +66,6 @@ export const PLAY_ITEMS: PlayItem[] = [
     year: 2023,
     status: "archived",
     category: "Tool",
+    image: "/images/play/token-studio.svg",
   },
 ];
