@@ -104,6 +104,11 @@ body {
   transition: background-color 200ms ease, color 200ms ease;
 }
 
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+
 /* Theme transitions on interactive elements */
 *, *::before, *::after {
   box-sizing: border-box;
