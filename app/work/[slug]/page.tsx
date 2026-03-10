@@ -79,7 +79,7 @@ export default async function WorkPage({ params }: Props) {
           <h1
             className="font-bold tracking-tight leading-[1.1] mb-5"
             style={{
-              fontSize: "clamp(2rem, 5vw, 3.25rem)",
+              fontSize: "clamp(2rem, 6vw, 3.25rem)",
               color: "var(--text-1)",
               maxWidth: "20ch",
             }}
