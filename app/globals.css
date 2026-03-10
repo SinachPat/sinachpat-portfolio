@@ -7,35 +7,36 @@
    ═══════════════════════════════════════════════════ */
 
 :root {
-  /* Backgrounds */
-  --bg:        #000000;
-  --surface:   #0d0d0d;
+  /* Backgrounds — family.co warm beige */
+  --bg:        #FBFAF9;
+  --surface:   #FFFFFF;
 
-  /* Borders */
-  --border:    #2A2A2A;
-  --border-hi: #3A3A3A;
+  /* Borders — warm tones */
+  --border:    #E8E4DC;
+  --border-hi: #D4CFC5;
 
-  /* Text hierarchy */
-  --text-1:    #F0F0F0;
-  --text-2:    #999999;
-  --text-3:    #666666;
+  /* Text hierarchy — family.co warm grays */
+  --text-1:    #343433;
+  --text-2:    #494440;
+  --text-3:    #848281;
 
-  /* Gray scale */
-  --gray-1:    #0d0d0d;
-  --gray-2:    #101010;
+  /* Gray scale — warm */
+  --gray-1:    #F2F0ED;
+  --gray-2:    #EAE6DD;
 
-  /* Accent — Electric Teal */
+  /* Accent */
   --accent:    #001eff;
   --accent-h:  #0014af;
 
   /* Status colors */
   --status-live:     #001eff;
-  --status-progress: #F59E0B;
-  --status-archived: #555555;
+  --status-progress: #D97706;
+  --status-archived: #848281;
 
   /* Header bg */
-  --header-bg: rgba(11, 11, 11, 0.9);
+  --header-bg: rgba(251, 250, 249, 0.88);
 }
+
 
 /* ═══════════════════════════════════════════════════
    TAILWIND v4 THEME
@@ -45,8 +46,9 @@
 
 @theme inline {
   /* Typography */
-  --font-sans: var(--font-inter, "Inter", system-ui, -apple-system, sans-serif);
-  --font-mono: var(--font-mono-var, "JetBrains Mono", "Fira Code", monospace);
+  --font-sans:  var(--font-inter, "Inter", system-ui, -apple-system, sans-serif);
+  --font-serif: var(--font-lora, "Lora", Georgia, serif);
+  --font-mono:  var(--font-mono-var, "JetBrains Mono", "Fira Code", monospace);
 
   /* Type scale — 8px grid */
   --text-xs:   0.6875rem; /* 11px */
@@ -90,7 +92,7 @@
    ═══════════════════════════════════════════════════ */
 
 html {
-  color-scheme: dark;
+  color-scheme: light;
   scroll-behavior: smooth;
 }
 

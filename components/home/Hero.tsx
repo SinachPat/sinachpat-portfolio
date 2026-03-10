@@ -14,19 +14,24 @@ export function Hero() {
 
       <FadeIn delay={80}>
         <h1
-          className="font-bold leading-tight tracking-tight mb-4 w-8xl"
+          className="leading-tight mb-4"
           style={{
             fontSize: "clamp(2.5rem, 6vw, 4rem)",
+            fontFamily: "var(--font-serif)",
+            fontWeight: 400,
             color: "var(--text-1)",
           }}
         >
           Product guy who builds, designs
-          <span style={{ color: "var(--accent)" }}> <br /> and engineers.</span>
+          <span style={{ color: "var(--accent)", fontStyle: "italic" }}> <br /> and engineers.</span>
         </h1>
       </FadeIn>
 
       <FadeIn delay={160}>
-        <p className="text-base leading-relaxed w-8xl" style={{ fontSize: "clamp(1rem, 2vw)", color: "var(--text-2)" }} >
+        <p
+          className="text-base leading-relaxed"
+          style={{ color: "var(--text-2)", maxWidth: "48ch" }}
+        >
           I&apos;m Osinachi Patrick — I work at the intersection of product
           strategy, design, and engineering. I build things that matter and
           write about what I learn along the way.
