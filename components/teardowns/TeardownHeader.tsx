@@ -28,10 +28,11 @@ export function TeardownHeader({ meta }: TeardownHeaderProps) {
 
       {/* TL;DR callout */}
       <div
-        className="rounded-lg p-4 mb-8 border-l-4"
+        className="p-4 mb-8 border-l-4"
         style={{
           backgroundColor: "var(--gray-1)",
           borderLeftColor: "var(--accent)",
+          borderRadius: "6px",
         }}
       >
         <p className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: "var(--accent)" }}>

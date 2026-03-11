@@ -37,8 +37,7 @@ export function Header() {
             <a
               href="/resume/osinachi-patrick-resume.pdf"
               download
-              className="hidden sm:inline-flex items-center text-xs px-3 py-1.5 rounded border border-[var(--border)] font-medium transition-colors hover:bg-[var(--gray-1)]"
-              style={{ color: "var(--text-1)" }}
+              className="hidden sm:inline-flex btn-notion-primary"
               data-cursor="pointer"
             >
               Resume ↗

@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { StatusTag } from "@/components/work/StatusTag";
@@ -12,18 +11,10 @@ interface PlayGridProps {
 }
 
 function PlayCard({ item, index }: { item: PlayItem; index: number }) {
-  const [hovered, setHovered] = useState(false);
-
   const inner = (
     <div
-      className="group block rounded-xl overflow-hidden border transition-all duration-300"
-      style={{
-        backgroundColor: "var(--surface)",
-        borderColor: hovered ? "var(--border-hi, var(--accent))" : "var(--border)",
-        boxShadow: hovered ? "0 8px 24px 0 rgb(0 0 0 / 0.10)" : "none",
-      }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      className="notion-card group block overflow-hidden border border-[var(--border)]"
+      style={{ backgroundColor: "var(--surface)" }}
     >
       {/* Cover image area */}
       <div
@@ -38,11 +29,10 @@ function PlayCard({ item, index }: { item: PlayItem; index: number }) {
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           />
         ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center gap-2 transition-transform duration-500 group-hover:scale-[1.03]">
-            <span className="text-5xl opacity-[0.06]">◈</span>
+          <div className="w-full h-full relative">
             <span
-              className="text-xs font-medium uppercase tracking-widest"
-              style={{ color: "var(--text-3)", opacity: 0.4 }}
+              className="absolute bottom-3 left-4 text-xs font-medium uppercase tracking-widest"
+              style={{ color: "var(--text-3)" }}
             >
               {item.category}
             </span>
@@ -71,10 +61,8 @@ function PlayCard({ item, index }: { item: PlayItem; index: number }) {
 
         {/* Title */}
         <h3
-          className="text-lg font-semibold leading-snug mb-2 transition-colors duration-200"
-          style={{
-            color: hovered ? "var(--accent)" : "var(--text-1)",
-          }}
+          className="text-lg font-semibold leading-snug mb-2 transition-colors duration-200 group-hover:text-[var(--accent)]"
+          style={{ color: "var(--text-1)" }}
         >
           {item.title}
         </h3>

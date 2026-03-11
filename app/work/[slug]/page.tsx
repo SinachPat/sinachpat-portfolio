@@ -98,8 +98,8 @@ export default async function WorkPage({ params }: Props) {
         {/* ═══ Metadata Grid (Rachel Chen style) ═══ */}
         <FadeIn delay={120}>
           <div
-            className="grid grid-cols-2 sm:grid-cols-4 gap-px rounded-lg overflow-hidden border border-[var(--border)]"
-            style={{ backgroundColor: "var(--border)" }}
+            className="grid grid-cols-2 sm:grid-cols-4 gap-px overflow-hidden border border-[var(--border)]"
+            style={{ backgroundColor: "var(--border)", borderRadius: "6px" }}
           >
             {[
               { label: "Role", value: meta.role },
@@ -137,8 +137,8 @@ export default async function WorkPage({ params }: Props) {
       <FadeIn delay={180}>
         <section className="container-page mt-12">
           <div
-            className="w-full aspect-[16/7] rounded-xl overflow-hidden border border-[var(--border)]"
-            style={{ backgroundColor: "var(--gray-1)" }}
+            className="w-full aspect-[16/7] overflow-hidden border border-[var(--border)]"
+            style={{ backgroundColor: "var(--gray-1)", borderRadius: "6px" }}
           >
             {meta.coverImage && meta.coverImage !== "/images/work/onboarding-cover.jpg" ? (
               // eslint-disable-next-line @next/next/no-img-element
@@ -148,13 +148,12 @@ export default async function WorkPage({ params }: Props) {
                 className="w-full h-full object-cover"
               />
             ) : (
-              <div className="w-full h-full flex flex-col items-center justify-center gap-3">
-                <span className="text-4xl opacity-15">◈</span>
+              <div className="w-full h-full relative">
                 <span
-                  className="text-xs font-medium uppercase tracking-widest"
-                  style={{ color: "var(--text-3)", opacity: 0.5 }}
+                  className="absolute bottom-4 left-5 text-xs font-medium uppercase tracking-widest"
+                  style={{ color: "var(--text-3)" }}
                 >
-                  Cover Image
+                  {meta.company}
                 </span>
               </div>
             )}
@@ -167,10 +166,11 @@ export default async function WorkPage({ params }: Props) {
         <FadeIn delay={220}>
           <section className="container-page mt-10">
             <div
-              className="grid gap-px rounded-lg overflow-hidden border border-[var(--border)]"
+              className="grid gap-px overflow-hidden border border-[var(--border)]"
               style={{
                 gridTemplateColumns: `repeat(${meta.metrics.length}, 1fr)`,
                 backgroundColor: "var(--border)",
+                borderRadius: "6px",
               }}
             >
               {meta.metrics.map((m) => (

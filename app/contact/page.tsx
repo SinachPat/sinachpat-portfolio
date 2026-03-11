@@ -97,8 +97,7 @@ export default function ContactPage() {
             <a
               href="/resume/osinachi-patrick-resume.pdf"
               download
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded border border-[var(--border)] text-sm font-medium transition-colors hover:bg-[var(--gray-1)]"
-              style={{ color: "var(--text-1)" }}
+              className="btn-notion-primary"
               data-cursor="pointer"
             >
               Download Resume ↓

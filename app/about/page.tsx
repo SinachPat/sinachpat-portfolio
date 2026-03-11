@@ -101,13 +101,10 @@ export default function AboutPage() {
           >
             <FadeIn delay={100} direction="none">
               <div
-                className="aspect-square rounded-lg overflow-hidden border border-[var(--border)]"
-                style={{ backgroundColor: "var(--gray-1)" }}
+                className="aspect-square overflow-hidden border border-[var(--border)]"
+                style={{ backgroundColor: "var(--gray-1)", borderRadius: "6px" }}
               >
                 {/* Replace with next/image when you have a photo */}
-                <div className="w-full h-full flex items-center justify-center">
-                  <span className="text-4xl opacity-20">◉</span>
-                </div>
               </div>
               <p
                 className="text-xs mt-3 text-center"

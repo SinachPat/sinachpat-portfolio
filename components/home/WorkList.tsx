@@ -35,7 +35,7 @@ export function WorkList({ posts }: WorkListProps) {
             <FadeIn key={post.slug} delay={i * 80}>
               <Link
                 href={`/work/${post.slug}`}
-                className="group block rounded-xl overflow-hidden border border-[var(--border)] transition-all duration-300 hover:shadow-lg hover:border-[var(--border-hi)]"
+                className="notion-card group block overflow-hidden border border-[var(--border)]"
                 style={{ backgroundColor: "var(--surface)" }}
                 data-cursor="pointer"
               >
@@ -52,11 +52,10 @@ export function WorkList({ posts }: WorkListProps) {
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                     />
                   ) : (
-                    <div className="w-full h-full flex flex-col items-center justify-center gap-3 transition-transform duration-500 group-hover:scale-[1.03]">
-                      <span className="text-5xl opacity-[0.06]">◈</span>
+                    <div className="w-full h-full relative">
                       <span
-                        className="text-xs font-medium uppercase tracking-widest"
-                        style={{ color: "var(--text-3)", opacity: 0.4 }}
+                        className="absolute bottom-3 left-4 text-xs font-medium uppercase tracking-widest"
+                        style={{ color: "var(--text-3)" }}
                       >
                         {post.company}
                       </span>
