@@ -106,7 +106,7 @@ export default async function WorkPage({ params }: Props) {
               { label: "Timeline", value: meta.duration },
               { label: "Company", value: meta.company },
               {
-                label: "Tools",
+                label: "Team",
                 value: meta.tags.slice(0, 3).join(", "),
               },
             ].map((item) => (
