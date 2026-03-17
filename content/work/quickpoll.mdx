@@ -17,7 +17,7 @@ publishedAt: "2025-11-25"
 ---
 
 ## Overview
-# Every time someone needed a one-off meeting, they left Meetwith.
+# Every time someone needed to do one-off group meeting scheduling, they left Meetwith.
 
 Meetwith's group scheduling required users to create a group before they could coordinate a meeting. That works for recurring teams — but for spontaneous or one-off meetings, users had no workflow at all. So they left. Every time someone needed to schedule a quick call with an ad-hoc group of people, they switched to LettuceMeet, Doodle, or plain email.
 
@@ -25,179 +25,26 @@ Meetwith's group scheduling required users to create a group before they could c
 
 ## problem
 # No need for recurring group scheduling? No scheduling.
+Meetwith's scheduling was tied to its groups feature. To schedule a meeting, you needed to first create a group — which meant every participant needed a Meetwith account.
 
+This made the platform unusable for ad-hoc coordination. If you wanted to schedule a one-off meeting with people who weren't already in your Meetwith groups, the platform had nothing for you.
 
+### The Real cost
+Every time a user opened LettuceMeet or Doodle instead of Meetwith, that was a lost touchpoint with the product. The gap wasn't just a missing feature — it was a retention leak.
 
+## Exploring the solution
+# A poll link anyone can use — with Meetwith's infrastructure underneath.
+The model already existed in the market. Tools like LettuceMeet let you generate a link, share it, collect availability, and schedule — no accounts needed. Users were already comfortable with this pattern.
 
+But Meetwith already had things those tools didn't: a contacts system, connected calendars, and group management. The opportunity was to build the same lightweight scheduling flow, but wire it into what Meetwith already had.
 
+### Zero friction for guests
+Anyone with a link provides their name and availability. No signup.
 
+### Full power for the host
+Pull in existing contacts (their calendar availability auto-populates), set guest permissions, control the poll lifecycle, and schedule the meeting.
 
+### Bridge to the platform
+After scheduling, the host can optionally create a group from the poll participants — turning a one-off interaction into ongoing platform usage.
 
-
-
-
-
-
-
-
-
-
-# What managing multiple calendars actually feels like
-Imagine a typical user. Mark is a COO.
-He has:
-- A work Outlook calendar
-- A personal Google calendar
-- Meetwith meetings
-- Sometimes a second Google calendar — for entertainment activities like soccer.
-
-When Mark wants to understand his day, he does something like this:
-1. Open Outlook
-2. Check work meetings
-3. Open Google calendar
-4. Check personal events
-5. Mentally merge both timelines
-
-This obviously requires a lot of effort and it’s easy to miss overlaps.
-
-<MDXImage src="/images/work/fragemented-calendar.png" alt="The cluttered multi-calendar view" caption="An example of a fragmented calendar system"/>
-
-# The question we asked
-Instead of asking:
-> How do we improve calendar integrations?
-> 
-
-we asked a better question:
-
-> What if Meetwith simply showed users their entire schedule?
-> 
-not just Meetwith meetings, everything.
-
-# Design principle
-
-**Time should come before platform.** Users don’t care where an event came from. They care mostly **when it happens**. So the interface shouldn’t group events by calendar. It should group them by **date/time**.
-
-This led to the core design decision:
-
-**One timeline = a list of all events. With a supporting calendar view for those who love the good ol calendar view**
-
-# The solution
-
-We introduced **Unified schedule.**
-
-A single view where users can see **every event across every connected calendar**.
-
-Meetwith fetches events from:
-
-- Google calendars
-- Outlook calendars
-- Meetwith meetings
-
-Then merges them into one chronological list. The user doesn’t have to be switching tools again. No mentally merging availability to keep track of schedule. Just one timeline.
-
-# The interface
-
-inside Meetwith, the M**y Schedules page** now includes:
-
-- My Calendar
-- My Meetings
-
-The unified schedule appears as the primary view.
-
-Each event card shows: title, date and time, participants, meeting link, calendar source.
-
-Events from different calendars appear together in chronological order.
-
-<MDXLoom
-  src="https://www.loom.com/share/4be99e15b0194e77a4610a1eb8ab15c2"
-  caption="Unified Schedule — the full interface walkthrough"
-/>
-
-# Transparency without clutter
-
-While our users care about time first, they still need to know where events come from. So each event includes a subtle label:
-
-<MDXImage src="/images/work/calendar-label.png" alt="The cluttered multi-calendar view" caption="Calendar labels for the connected calendar. e.g shown above is the Google Calendar"/>
-
-```
-Meetwith
-Google – sinachpat@gmail.com
-Google – patricksinach@gmail.com
-Outlook – sinachpat@outlook
-```
-
-This solves another real-world issue: many professionals manage **multiple accounts on the same platform**.
-
-# Making the timeline actionable
-
-A schedule view shouldn’t just display events. It helps users act. So every event allows users to:
-
-- Join Meeting
-- Open event details
-- Edit Meetwith & Non-Meetwith events
-- Sync all changes
-
-This turns the schedule into a **control surface**, not just a list.
-
-<MDXImage src="/images/work/actionable-timeline.png" alt="An actionable timeline" caption="Making the timeline actionable"/>
-
-<MDXImage src="/images/work/actionable-timeline-2.png" alt="An actionable timeline" caption="Making the timeline actionable"/>
-
-# Edge cases we had to solve
-
-Calendar systems introduce complexity. Two scenarios required special attention.
-
-### Overlapping meetings
-
-When events overlap, the interface pairs them side by side to show the conflicting of events. 
-
-This helps users detect scheduling collisions/duplicates immediately.
-
-### Multiple calendar accounts
-
-A single user might connect several Google accounts.
-
-So instead of labeling events simply as “Google calendar”, we included the **account identity (email address — calendar)**. This reduces confusion.
-
-# Synchronization
-
-A unified schedule only works if it stays accurate.
-
-So we designed the sync layer to ensure:
-
-- Meetwith edits update external calendars
-- RSVP responses sync across systems
-- Duplicate events are clearly shown.
-
-The goal was simple: **Meetwith should never create calendar inconsistencies.**
-
-<MDXImage src="/images/work/my-full-calendar.png" alt="An actionable timeline" caption="Making the timeline actionable"/>
-
-# What this changed for the product
-
-Before this feature: Meetwith was primarily a **meeting scheduling tool**.
-
-After it: Meetwith started behaving like a **time dashboard**.
-
-Users could now open Meetwith and ***instantly understand their day.***
-
-Which quietly changes how often they return to the product.
-
-# Something interesting we discovered
-
-During testing, some users said they’ll want to see all their events in the list view of the feature instead of just Meetwith meetings as it was before. Reason being that their their calendar didn’t just contain meetings. It contained **work blocks**.
-
-Things like: writing reports, preparing presentations, deep work sessions, social activities. This helps them know in chronological order the next thing on their plate to do.
-
-This opened a potential future direction:
-
-What if the schedule also supported **tasks**? Turning Meetwith into something closer to a **time planning system**, not just a meeting scheduler.
-
-On the short term, we included a section that shows the top 3 upcoming events.
-
-# Reflection
-
-This cycle reinforced something important. Most productivity problems are not about missing features. They’re about **missing clarity**.
-
-Users didn’t need more calendar tools, they needed **one place that made their schedule visible**.
-
-This also showed that the most powerful product improvement isn’t adding complexity. It’s removing the need for users to think.
+<MDXImage src="/images/work/quickpoll-components.png" alt="my focus & objective" caption=""/>
