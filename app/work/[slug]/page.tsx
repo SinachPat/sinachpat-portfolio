@@ -218,6 +218,19 @@ export default async function WorkPage({ params }: Props) {
       {/* ═══ MDX Body ═══ */}
       <section className="container-page mt-16 pb-24">
         <div className="case-study-content prose mx-auto" style={{ maxWidth: "76ch" }}>
+          {meta.externalUrl && (
+            <div className="not-prose mb-10">
+              <a
+                href={meta.externalUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-notion-primary"
+                data-cursor="pointer"
+              >
+                Open App ↗
+              </a>
+            </div>
+          )}
           {content}
         </div>
 
@@ -238,21 +251,6 @@ export default async function WorkPage({ params }: Props) {
           </div>
         </div>
 
-        {/* View Live link (if available) */}
-        {meta.externalUrl && (
-          <div className="mt-6 pt-0">
-            <a
-              href={meta.externalUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-sm font-medium transition-colors hover:text-[var(--accent)]"
-              style={{ color: "var(--text-2)" }}
-              data-cursor="pointer"
-            >
-              View Live ↗
-            </a>
-          </div>
-        )}
 
         {/* Prev / Next navigation */}
         <PostNavigation
