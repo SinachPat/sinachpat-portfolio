@@ -33,7 +33,15 @@
       "Bash(git rm --cached content/work/sample-project.mdx)",
       "Bash(gh repo create sinachpat-portfolio --public --source=. --remote=origin --push)",
       "Bash(git push origin main)",
-      "WebFetch(domain:family.co)"
+      "WebFetch(domain:family.co)",
+      "Bash(node -e \"const fs=require\\(''fs''\\); const css=fs.readFileSync\\(''node_modules/tailwindcss/preflight.css'',''utf8''\\); console.log\\(css\\)\")",
+      "Bash(lsof -ti:3000)",
+      "Bash(xargs kill -9)",
+      "Bash(pkill -f \"next\")",
+      "Bash(pkill -9 -f \"next\")",
+      "Bash(pkill -9 -f \"node\")",
+      "Bash(node_modules/.bin/next build)",
+      "WebFetch(domain:sinachpat-portfolio.vercel.app)"
     ]
   }
 }
