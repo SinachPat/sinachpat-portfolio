@@ -4,6 +4,10 @@ import matter from "gray-matter";
 import { compileMDX } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import type { WorkFrontmatter, TeardownFrontmatter, PlayItem } from "./types";
+import { MDXImage } from "@/components/mdx/MDXImage";
+import { MDXVideo } from "@/components/mdx/MDXVideo";
+
+const mdxComponents = { MDXImage, MDXVideo };
 
 const CONTENT_ROOT = path.join(process.cwd(), "content");
 
@@ -30,6 +34,7 @@ export async function getWorkBySlug(slug: string) {
 
   const { content: compiled } = await compileMDX({
     source: content,
+    components: mdxComponents,
     options: {
       mdxOptions: {
         remarkPlugins: [remarkGfm],
@@ -75,6 +80,7 @@ export async function getTeardownBySlug(slug: string) {
 
   const { content: compiled } = await compileMDX({
     source: content,
+    components: mdxComponents,
     options: {
       mdxOptions: {
         remarkPlugins: [remarkGfm],
@@ -117,6 +123,7 @@ export async function getPlayBySlug(slug: string) {
 
   const { content: compiled } = await compileMDX({
     source: content,
+    components: mdxComponents,
     options: {
       mdxOptions: {
         remarkPlugins: [remarkGfm],
