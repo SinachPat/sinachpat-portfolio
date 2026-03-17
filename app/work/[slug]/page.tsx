@@ -217,20 +217,21 @@ export default async function WorkPage({ params }: Props) {
 
       {/* ═══ MDX Body ═══ */}
       <section className="container-page mt-16 pb-24">
+        {meta.externalUrl && (
+          <div className="mx-auto mb-8" style={{ maxWidth: "76ch" }}>
+            <a
+              href={meta.externalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-notion-primary"
+              data-cursor="pointer"
+            >
+              Open App ↗
+            </a>
+          </div>
+        )}
+
         <div className="case-study-content prose mx-auto" style={{ maxWidth: "76ch" }}>
-          {meta.externalUrl && (
-            <div className="not-prose mb-10">
-              <a
-                href={meta.externalUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-notion-primary"
-                data-cursor="pointer"
-              >
-                Open App ↗
-              </a>
-            </div>
-          )}
           {content}
         </div>
 
