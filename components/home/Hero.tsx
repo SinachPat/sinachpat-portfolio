@@ -32,9 +32,8 @@ export function Hero() {
           className="text-base leading-relaxed"
           style={{ color: "var(--text-2)", maxWidth: "48ch" }}
         >
-          I&apos;m Osinachi Patrick — I work at the intersection of product
-          strategy, design, and engineering. I build things that matter and
-          write about what I learn along the way.
+          I&apos;m Osinachi Patrick — I have 6+ years experience work at the intersection of product
+          strategy, design, and engineering. I'm currently building Meetwith. Before Meetwith, i worked as product/design lead at ShipLaas
         </p>
       </FadeIn>
     </section>

@@ -10,133 +10,280 @@ tags: ["Product Strategy", "UX Design", "0→1", "Product Management"]
 coverImage: "/images/work/unified-calendar.png"
 summary: "Reduced time-to-value from 14 days to 3 by redesigning the activation loop and eliminating 60% of friction points in the signup flow."
 metrics:
-  - label: "Activation Rate"
+  - label: "Usage Rate"
     before: "22%"
     after: "61%"
   - label: "Time to Value"
-    before: "14 days"
-    after: "3 days"
-  - label: "Support Tickets"
-    before: "400/mo"
-    after: "130/mo"
+    before: "30 days"
+    after: "7 days"
 externalUrl: ""
 featured: true
 order: 1
-publishedAt: "2024-06-01"
+publishedAt: "2026-01-31"
 ---
 
-## 01 — Context
+# Context
 
-Acme Corp is a B2B SaaS platform that helps mid-market companies manage their operational workflows. When I joined the onboarding project, the product had been live for 18 months. Growth was healthy — the marketing team was bringing in 2,400+ signups per month — but something was wrong downstream.
+Designing a single view for everything on your calendar. People rarely live inside one calendar. There’s usually a work calendar, A personal calendar, Sometimes another tied to a different email.
 
-Over 60% of those signups never reached what we internally called the "aha moment": the point where a user creates their first automated workflow and sees it run successfully. Instead, they'd sign up, poke around, and quietly churn.
+And then there’s the scheduling tool itself. On paper, calendar integrations solve this. In practice, they don’t because even when calendars are connected, people still leave the product to check their schedule elsewhere.
 
-> The pipeline was full, but the bucket was leaking. We weren't losing users to competitors — we were losing them to confusion.
+This project started with a simple observation:
 
----
-
-## 02 — The Problem
-
-The existing onboarding flow had 14 screens. Fourteen. It collected company size, industry, budget range, team count, and role — all before the user had seen a single feature. The flow had been designed by committee over 18 months, with every team wanting their own data collected upfront.
-
-When I audited the funnel, the pattern was stark:
-
-1. Step 1 (email/password) — 100% completion
-2. Step 2 (company info) — 74% completion
-3. Step 3 (team size + budget) — 41% completion
-4. Steps 4–14 — effectively dead; fewer than 28% reached the dashboard
-
-The drop-off at step 3 was the cliff. We were asking for commitment before we'd demonstrated any value.
+**Meetwith helped users create meetings — but it didn’t yet help them understand their full schedule.**
 
 ---
 
-## 03 — Research
+# The moment the problem became obvious
 
-I ran 12 moderated user interviews across three segments: solo operators, team leads, and enterprise evaluators. I also analyzed 400 session recordings from FullStory and reviewed 6 months of onboarding-related support tickets.
+Before this feature, something felt off. Users were connecting their calendars to Meetwith. But they were still opening Google calendar/Outlook/iCal to check their day.
 
-Key findings:
+Which meant one thing:
 
-- **Users didn't understand the value proposition from the marketing site.** They knew Acme "automated workflows" but couldn't articulate what that meant for their daily work.
-- **The signup form felt like a procurement form.** Three participants compared it to filling out a vendor assessment. One said: "I just wanted to try it, not commit to a contract."
-- **The most valuable feature — the visual workflow builder — was buried 6 clicks deep.** Users who found it organically had 3x higher retention, but most never got there.
-- **Support tickets were dominated by "how do I start?" questions.** 67% of tickets in the first 7 days were orientation-related, not bug-related.
+Meetwith was **not yet their source of truth for their schedule**.
 
----
+It was just another scheduling tool sitting beside their existing calendars.
 
-## 04 — Framing the Solution
+So even after scheduling meetings in Meetwith, users still had to:
 
-Based on the research, I framed the redesign around three principles:
+- Open their different calendars
+- Cross-check events
+- Mentally merge everything
 
-1. **Value before commitment.** Don't ask for anything until you've shown something worth caring about.
-2. **Action over explanation.** Show the product, don't explain it. Let users do something meaningful in the first session.
-3. **Progressive disclosure.** Collect data only when it becomes relevant to the user's experience — not when it's convenient for our internal teams.
-
-I proposed eliminating the entire information-gathering phase from onboarding and replacing it with what I called a "value-first" activation model.
-
-> The hypothesis was simple: if we could get users to build and run one workflow in their first session, everything else — data collection, team invites, upgrade conversations — would follow naturally.
+That mental merging was the real problem.
 
 ---
 
-## 05 — The Design
+# What managing multiple calendars actually feels like
 
-The redesigned onboarding has three phases:
+Imagine a typical user. Mark is a COO.
 
-### Phase 1: Frictionless Entry
-Three steps to reach the product: email, verify, choose a workspace name. No company size. No budget. No role selection. Total time: under 60 seconds.
+He has:
 
-### Phase 2: Guided First Action
-Instead of a blank dashboard, new users land on an interactive walkthrough. They're presented with three pre-built workflow templates matched to common use cases:
+- A work Outlook calendar
+- A personal Google calendar
+- Meetwith meetings
+- Sometimes a second Google calendar — for entertainment activities like soccer.
 
-- **"Automate a client intake form"** — for agencies and service businesses
-- **"Set up a team standup report"** — for team leads
-- **"Create an approval chain"** — for operations
+When Mark wants to understand his day, he does something like this:
 
-The user picks one and walks through customizing it with their own data. The template is functional — by the end of the walkthrough, they've built and triggered a real workflow. This takes about 4 minutes.
+1. Open Outlook
+2. Check work meetings
+3. Open Google calendar
+4. Check personal events
+5. Mentally merge both timelines
 
-### Phase 3: Progressive Data Collection
-After the first workflow runs, we surface a lightweight "personalize your experience" prompt. This collects company size and role — the same data we used to demand upfront — but now the user has context for why it matters. Completion rate for this step: 89%, compared to 41% for the old step 3.
-
----
-
-## 06 — Execution
-
-The project ran for 12 weeks across two sprints:
-
-- **Weeks 1–4:** Research, framing, and design. I led the design process with one product designer, creating flows in Figma and testing with 8 prototype participants.
-- **Weeks 5–10:** Engineering build. I worked daily with two frontend engineers and one backend engineer to implement the new flow, with weekly check-ins with the data team to ensure analytics coverage.
-- **Weeks 11–12:** Staged rollout. We ran a 50/50 split test between old and new onboarding for 2 weeks, measuring activation rate, time-to-value, and 7-day retention.
-
-The biggest engineering challenge was the template system. Each template needed to be both instructional (guiding the user) and functional (producing a real workflow). We solved this by building a "guided mode" layer on top of the existing workflow editor — it highlights the next step without restricting the user from exploring.
+This obviously requires a lot of effort and it’s easy to miss overlaps.
 
 ---
 
-## 07 — Outcomes
+**artifact to include**
 
-Within 30 days of full rollout:
+include a **diagram showing fragmented calendars**:
 
-- **Activation rate: 22% → 61%.** Nearly 3x more users reached the "aha moment" of running their first workflow.
-- **Time-to-value: 14 days → 3 days.** The median time from signup to first workflow dropped by 79%.
-- **Onboarding support tickets: 400/mo → 130/mo.** A 67% reduction, freeing up the support team to focus on retention and expansion.
-- **7-day retention: 34% → 52%.** Users who completed the guided walkthrough were significantly more likely to return.
+```
+Outlook calendar
+Google calendar
+Meetwith meetings
+↓
+user mentally merges everything
+```
 
-The revenue impact was indirect but meaningful: by Q3 2024, the sales team reported that trial-to-paid conversion improved by 18%, which they attributed to users arriving at sales conversations with a much stronger understanding of the product.
-
----
-
-## 08 — What I Learned
-
-**Organizational alignment is harder than design.** The original 14-step onboarding existed because every team had lobbied for their data point. Removing those steps required buy-in from marketing, sales, and customer success. I spent as much time on internal alignment as I did on user research.
-
-**Templates are a product, not a shortcut.** Building templates that are both educational and functional required careful content design. A bad template teaches nothing; a great template creates an "I could build this" moment.
-
-**Metrics need context.** The old onboarding had high completion rates for step 1 — but that's meaningless if the overall funnel bleeds out by step 3. I restructured our dashboard to track activation rate (reaching the aha moment) rather than onboarding completion (reaching the dashboard).
+this visual makes the problem obvious.
 
 ---
 
-## 09 — Reflection
+# The question we asked
 
-If I were to revisit this project, I'd invest more in the post-activation experience. We nailed the first session, but the transition from "guided" to "self-directed" still has friction. Users complete the walkthrough but sometimes struggle to create their second workflow independently.
+Instead of asking:
 
-I'd also explore personalized template recommendations based on signup source. Users coming from a blog post about team management have different needs than those arriving from a Google ad about automation — and the template selection screen could be smarter about this.
+> How do we improve calendar integrations?
+> 
 
-> The core insight from this project: people need to understand value before they're willing to invest effort. Every form field you show before the "aha moment" is a tax on curiosity.
+we asked a better question:
+
+> What if Meetwith simply showed users their entire schedule?
+> 
+
+not just Meetwith meetings, everything.
+
+---
+
+# Design principle
+
+**Time should come before platform.** Users don’t care where an event came from. They care mostly **when it happens**. So the interface shouldn’t group events by calendar. It should group them by **date/time**.
+
+This led to the core design decision:
+
+**One timeline = a list of all events. With a supporting calendar view for those who love the good ol calendar view**
+
+---
+
+# The solution
+
+We introduced **Unified schedule.**
+
+A single view where users can see **every event across every connected calendar**.
+
+Meetwith fetches events from:
+
+- Google calendars
+- Outlook calendars
+- Meetwith meetings
+
+Then merges them into one chronological list. The user doesn’t have to be switching tools again. No mentally merging availability to keep track of schedule. Just one timeline.
+
+---
+
+# The interface
+
+inside Meetwith, the M**y Schedules page** now includes:
+
+- My Calendar
+- My Meetings
+
+The unified schedule appears as the primary view.
+
+Each event card shows: title, date and time, participants, meeting link, calendar source.
+
+Events from different calendars appear together in chronological order.
+
+---
+
+**artifact to include**
+
+include **final UI mockups of the unified schedule view**.
+
+show:
+
+- the timeline list
+- event cards
+- calendar source labels
+
+---
+
+# Transparency without clutter
+
+While our users care about time first, they still need to know where events come from. So each event includes a subtle label:
+
+```
+Meetwith
+Google – sinachpat@gmail.com
+Google – patricksinach@gmail.com
+Outlook – sinachpat@outlook
+```
+
+This solves another real-world issue: many professionals manage **multiple accounts on the same platform**.
+
+---
+
+# Making the timeline actionable
+
+A schedule view shouldn’t just display events. It helps users act. So every event allows users to:
+
+- Join Meeting
+- Open event details
+- Edit Meetwith & Non-Meetwith events
+- Sync all changes
+
+This turns the schedule into a **control surface**, not just a list.
+
+---
+
+**artifact to include**
+
+include **interaction flow showing event actions**:
+
+```
+schedule list
+↓
+open event
+↓
+join / edit / view details
+```
+
+---
+
+# Edge cases we had to solve
+
+Calendar systems introduce complexity. Two scenarios required special attention.
+
+### Overlapping meetings
+
+When events overlap, the interface pairs them side by side to show the conflicting of events. 
+
+This helps users detect scheduling collisions/duplicates immediately.
+
+---
+
+### Multiple calendar accounts
+
+A single user might connect several Google accounts.
+
+So instead of labeling events simply as “Google calendar”, we included the **account identity (email address — calendar)**. This reduces confusion.
+
+---
+
+# Synchronization
+
+A unified schedule only works if it stays accurate.
+
+So we designed the sync layer to ensure:
+
+- Meetwith edits update external calendars
+- RSVP responses sync across systems
+- Duplicate events are clearly shown.
+
+The goal was simple: **Meetwith should never create calendar inconsistencies.**
+
+---
+
+**artifact to include**
+
+include a **simple system diagram**:
+
+```
+Google Calendar
+Outlook Calendar
+Meetwith events
+↓
+sync layer
+↓
+unified schedule
+```
+
+---
+
+# What this changed for the product
+
+Before this feature: Meetwith was primarily a **meeting scheduling tool**.
+
+After it: Meetwith started behaving like a **time dashboard**.
+
+Users could now open Meetwith and ***instantly understand their day.***
+
+Which quietly changes how often they return to the product.
+
+---
+
+# Something interesting we discovered
+
+During testing, some users said they’ll want to see all their events in the list view of the feature instead of just Meetwith meetings as it was before. Reason being that their their calendar didn’t just contain meetings. It contained **work blocks**.
+
+Things like: writing reports, preparing presentations, deep work sessions, social activities. This helps them know in chronological order the next thing on their plate to do.
+
+This opened a potential future direction:
+
+What if the schedule also supported **tasks**? Turning Meetwith into something closer to a **time planning system**, not just a meeting scheduler.
+
+On the short term, we included a section that shows the top 3 upcoming events.
+
+---
+
+# Reflection
+
+This cycle reinforced something important. Most productivity problems are not about missing features. They’re about **missing clarity**.
+
+Users didn’t need more calendar tools, they needed **one place that made their schedule visible**.
+
+This also showed that the most powerful product improvement isn’t adding complexity. It’s removing the need for users to think.
