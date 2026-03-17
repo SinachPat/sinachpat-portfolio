@@ -6,8 +6,9 @@ import remarkGfm from "remark-gfm";
 import type { WorkFrontmatter, TeardownFrontmatter, PlayItem } from "./types";
 import { MDXImage } from "@/components/mdx/MDXImage";
 import { MDXVideo } from "@/components/mdx/MDXVideo";
+import { MDXLoom } from "@/components/mdx/MDXLoom";
 
-const mdxComponents = { MDXImage, MDXVideo };
+const mdxComponents = { MDXImage, MDXVideo, MDXLoom };
 
 const CONTENT_ROOT = path.join(process.cwd(), "content");
 
