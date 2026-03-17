@@ -18,7 +18,7 @@ export function MDXImage({ src, alt, caption, size = "full" }: MDXImageProps) {
     >
       <div
         className="overflow-hidden border border-[var(--border)]"
-        style={{ borderRadius: "6px", backgroundColor: "var(--gray-1)" }}
+        style={{ borderRadius: "6px" }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img

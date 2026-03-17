@@ -217,7 +217,7 @@ export default async function WorkPage({ params }: Props) {
 
       {/* ═══ MDX Body ═══ */}
       <section className="container-page mt-16 pb-24">
-        <div className="case-study-content prose" style={{ maxWidth: "68ch" }}>
+        <div className="case-study-content prose mx-auto" style={{ maxWidth: "76ch" }}>
           {content}
         </div>
 
