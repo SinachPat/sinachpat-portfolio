@@ -22,7 +22,7 @@ order: 1
 publishedAt: "2026-01-31"
 ---
 
-# Context
+#Context
 
 Designing a single view for everything on your calendar. People rarely live inside one calendar. There’s usually a work calendar, A personal calendar, Sometimes another tied to a different email.
 
@@ -34,7 +34,7 @@ This project started with a simple observation:
 
 ---
 
-# The moment the problem became obvious
+#The moment the problem became obvious
 
 Before this feature, something felt off. Users were connecting their calendars to Meetwith. But they were still opening Google calendar/Outlook/iCal to check their day.
 
@@ -54,7 +54,7 @@ That mental merging was the real problem.
 
 ---
 
-# What managing multiple calendars actually feels like
+#What managing multiple calendars actually feels like
 
 Imagine a typical user. Mark is a COO.
 
@@ -93,7 +93,7 @@ this visual makes the problem obvious.
 
 ---
 
-# The question we asked
+#The question we asked
 
 Instead of asking:
 
@@ -109,7 +109,7 @@ not just Meetwith meetings, everything.
 
 ---
 
-# Design principle
+#Design principle
 
 **Time should come before platform.** Users don’t care where an event came from. They care mostly **when it happens**. So the interface shouldn’t group events by calendar. It should group them by **date/time**.
 
@@ -119,7 +119,7 @@ This led to the core design decision:
 
 ---
 
-# The solution
+#The solution
 
 We introduced **Unified schedule.**
 
@@ -135,7 +135,7 @@ Then merges them into one chronological list. The user doesn’t have to be swit
 
 ---
 
-# The interface
+#The interface
 
 inside Meetwith, the M**y Schedules page** now includes:
 
@@ -162,7 +162,7 @@ show:
 
 ---
 
-# Transparency without clutter
+#Transparency without clutter
 
 While our users care about time first, they still need to know where events come from. So each event includes a subtle label:
 
@@ -177,7 +177,7 @@ This solves another real-world issue: many professionals manage **multiple accou
 
 ---
 
-# Making the timeline actionable
+#Making the timeline actionable
 
 A schedule view shouldn’t just display events. It helps users act. So every event allows users to:
 
@@ -204,7 +204,7 @@ join / edit / view details
 
 ---
 
-# Edge cases we had to solve
+#Edge cases we had to solve
 
 Calendar systems introduce complexity. Two scenarios required special attention.
 
@@ -216,7 +216,7 @@ This helps users detect scheduling collisions/duplicates immediately.
 
 ---
 
-### Multiple calendar accounts
+###Multiple calendar accounts
 
 A single user might connect several Google accounts.
 
@@ -224,7 +224,7 @@ So instead of labeling events simply as “Google calendar”, we included the *
 
 ---
 
-# Synchronization
+#Synchronization
 
 A unified schedule only works if it stays accurate.
 
@@ -254,7 +254,7 @@ unified schedule
 
 ---
 
-# What this changed for the product
+#What this changed for the product
 
 Before this feature: Meetwith was primarily a **meeting scheduling tool**.
 
@@ -266,7 +266,7 @@ Which quietly changes how often they return to the product.
 
 ---
 
-# Something interesting we discovered
+#Something interesting we discovered
 
 During testing, some users said they’ll want to see all their events in the list view of the feature instead of just Meetwith meetings as it was before. Reason being that their their calendar didn’t just contain meetings. It contained **work blocks**.
 
@@ -280,7 +280,7 @@ On the short term, we included a section that shows the top 3 upcoming events.
 
 ---
 
-# Reflection
+#Reflection
 
 This cycle reinforced something important. Most productivity problems are not about missing features. They’re about **missing clarity**.
 
