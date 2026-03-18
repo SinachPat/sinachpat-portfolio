@@ -175,15 +175,14 @@ export function MobileMenu() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.32, duration: 0.25 }}
               >
-                <a
-                  href="/resume/osinachi-patrick-resume.pdf"
-                  download
+                <Link
+                  href="/experience"
                   className="inline-flex items-center gap-1 text-sm font-medium transition-colors hover:text-[var(--accent)]"
                   style={{ color: "var(--text-2)" }}
                   onClick={() => setIsOpen(false)}
                 >
-                  Resume ↗
-                </a>
+                  Experience ↗
+                </Link>
               </motion.div>
             </motion.div>
           )}

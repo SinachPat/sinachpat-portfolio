@@ -33,15 +33,14 @@ export function Header() {
 
           <div className="flex items-center gap-3">
             {/* <ThemeToggle /> */}
-            {/* Resume — desktop only */}
-            <a
-              href="/resume/osinachi-patrick-resume.pdf"
-              download
+            {/* Experience page — desktop only */}
+            <Link
+              href="/experience"
               className="hidden sm:inline-flex btn-notion-primary"
               data-cursor="pointer"
             >
-              Resume ↗
-            </a>
+              Experience ↗
+            </Link>
           </div>
 
           {/* Mobile hamburger */}
