@@ -181,7 +181,7 @@ export function MobileMenu() {
                   style={{ color: "var(--text-2)" }}
                   onClick={() => setIsOpen(false)}
                 >
-                  Experience ↗
+                  Resume ↗
                 </Link>
               </motion.div>
             </motion.div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Tag } from "@/components/ui/Tag";
+import { PrintButton } from "@/components/ui/PrintButton";
 
 export const metadata: Metadata = {
   title: "Experience",
@@ -215,6 +216,9 @@ export default function ExperiencePage() {
             ventures — from 0→1 product builds to leading design at live
             consumer products.
           </p>
+          <div className="mt-8">
+            <PrintButton />
+          </div>
         </FadeIn>
 
         {/* Currently section */}

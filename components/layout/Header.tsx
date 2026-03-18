@@ -33,13 +33,13 @@ export function Header() {
 
           <div className="flex items-center gap-3">
             {/* <ThemeToggle /> */}
-            {/* Experience page — desktop only */}
+            {/* Resume / Experience page — desktop only */}
             <Link
               href="/experience"
               className="hidden sm:inline-flex btn-notion-primary"
               data-cursor="pointer"
             >
-              Experience ↗
+              Resume ↗
             </Link>
           </div>
 
