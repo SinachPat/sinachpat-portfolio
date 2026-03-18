@@ -22,8 +22,8 @@ export function Hero() {
             color: "var(--text-1)",
           }}
         >
-          Product guy who builds, designs
-          <span style={{ color: "var(--accent)", fontStyle: "italic" }}> <br /> and engineers.</span>
+          I'm Patrick, a product guy who designs & builds digital products with a focus on user experience design, product management & engineering,
+          <span style={{ color: "var(--accent)", fontStyle: "italic" }}> <br /> and I also love tinkering on GTM processes.</span>
         </h1>
       </FadeIn>
 
