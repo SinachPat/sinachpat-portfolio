@@ -5,7 +5,7 @@ export function Footer() {
     <footer className="border-t border-[var(--border)] mt-auto">
       <div className="container-page py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <p className="text-xs" style={{ color: "var(--text-3)" }}>
-          © {year} Designed and Built by Osinachi Patrick & Claude Code
+          © {year} Designed and Built by Osinachi Patrick
         </p>
 
         <nav className="flex items-center gap-5">
