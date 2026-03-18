@@ -18,11 +18,8 @@ const links = [
     label: "Teardowns",
     match: (p: string) => p.startsWith("/teardowns"),
   },
-  {
-    href: "/play",
-    label: "Playground",
-    match: (p: string) => p.startsWith("/play"),
-  },
+  // Hidden — uncomment to show Playground in nav
+  // { href: "/play", label: "Playground", match: (p: string) => p.startsWith("/play") },
   {
     href: "/about",
     label: "About",
