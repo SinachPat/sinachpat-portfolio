@@ -10,7 +10,7 @@ export function Footer() {
 
         <nav className="flex items-center gap-5">
           <a
-            href="mailto:hello@osinachi.dev"
+            href="mailto:sinachpat@gmail.com"
             className="text-xs transition-colors hover:text-[var(--accent)]"
             style={{ color: "var(--text-3)" }}
             data-cursor="pointer"
@@ -18,17 +18,17 @@ export function Footer() {
             Email
           </a>
           <a
-            href="https://twitter.com"
+            href="https://twitter.com/0xsinachpat"
             target="_blank"
             rel="noopener noreferrer"
             className="text-xs transition-colors hover:text-[var(--accent)]"
             style={{ color: "var(--text-3)" }}
             data-cursor="pointer"
           >
-            Twitter
+            X(Twitter)
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/osinachi-patrick/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-xs transition-colors hover:text-[var(--accent)]"
