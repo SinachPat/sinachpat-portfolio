@@ -31,7 +31,7 @@ export function WorkList({ posts }: WorkListProps) {
         </p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {posts.map((post, i) => (
+          {posts.filter((post) => post.title && post.slug).map((post, i) => (
             <FadeIn key={post.slug} delay={i * 80} className="h-full">
               <Link
                 href={`/work/${post.slug}`}
@@ -107,7 +107,7 @@ export function WorkList({ posts }: WorkListProps) {
 
                   {/* Tags — mt-auto pins them to the bottom */}
                   <div className="flex flex-wrap gap-1.5 mt-auto">
-                    {post.tags.slice(0, 3).map((tag) => (
+                    {(post.tags ?? []).slice(0, 3).map((tag) => (
                       <Tag key={tag}>{tag}</Tag>
                     ))}
                   </div>
