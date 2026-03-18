@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Lora } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
@@ -18,6 +18,15 @@ const lora = Lora({
   display: "swap",
   style: ["normal", "italic"],
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#FAFAFA" },
+    { media: "(prefers-color-scheme: dark)", color: "#111111" },
+  ],
+};
 
 export const metadata: Metadata = {
   title: {
@@ -41,6 +50,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${lora.variable}`}>
+      <head>
+        {/* Preconnect for Loom embeds — saves ~150ms DNS+TCP on first embed */}
+        <link rel="preconnect" href="https://www.loom.com" />
+        <link rel="dns-prefetch" href="https://cdn.loom.com" />
+      </head>
       <body
         className="antialiased min-h-screen flex flex-col"
         style={{ backgroundColor: "var(--bg)", color: "var(--text-1)" }}

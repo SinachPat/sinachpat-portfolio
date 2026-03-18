@@ -1,7 +1,8 @@
+import Image from "next/image";
+import Link from "next/link";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { StatusTag } from "@/components/work/StatusTag";
 import { Tag } from "@/components/ui/Tag";
-import Link from "next/link";
 import type { WorkFrontmatter } from "@/lib/types";
 
 interface WorkListProps {
@@ -41,15 +42,17 @@ export function WorkList({ posts }: WorkListProps) {
               >
                 {/* Cover image area */}
                 <div
-                  className="w-full aspect-[16/9] overflow-hidden shrink-0"
+                  className="relative w-full aspect-[16/9] overflow-hidden shrink-0"
                   style={{ backgroundColor: "var(--gray-1)" }}
                 >
                   {post.coverImage ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
+                    <Image
                       src={post.coverImage}
                       alt={post.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      priority={i === 0}
                     />
                   ) : (
                     <div className="w-full h-full relative">

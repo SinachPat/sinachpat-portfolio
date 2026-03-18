@@ -26,6 +26,7 @@ export function MDXImage({ src, alt, caption, size = "full" }: MDXImageProps) {
           alt={alt}
           className="w-full h-auto block"
           loading="lazy"
+          decoding="async"
         />
       </div>
       {caption && (

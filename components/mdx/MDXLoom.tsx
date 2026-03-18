@@ -45,7 +45,8 @@ export function MDXLoom({ src, caption }: MDXLoomProps) {
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [src, embedSrc]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [src]);
 
   return (
     <figure className="my-10">

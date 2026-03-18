@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { getWorkBySlug, getWorkPosts, getWorkSlugs } from "@/lib/mdx";
 import { StatusTag } from "@/components/work/StatusTag";
 import { Tag } from "@/components/ui/Tag";
@@ -137,15 +138,17 @@ export default async function WorkPage({ params }: Props) {
       <FadeIn delay={180}>
         <section className="container-page mt-12">
           <div
-            className="w-full aspect-[16/9] overflow-hidden border border-[var(--border)]"
+            className="relative w-full aspect-[16/9] overflow-hidden border border-[var(--border)]"
             style={{ backgroundColor: "var(--gray-1)", borderRadius: "6px" }}
           >
             {meta.coverImage && meta.coverImage !== "/images/work/onboarding-cover.jpg" ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
+              <Image
                 src={meta.coverImage}
                 alt={`${meta.title} cover`}
-                className="w-full h-full object-cover"
+                fill
+                sizes="100vw"
+                className="object-cover"
+                priority
               />
             ) : (
               <div className="w-full h-full relative">

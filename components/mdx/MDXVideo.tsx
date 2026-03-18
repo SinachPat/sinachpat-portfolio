@@ -52,6 +52,7 @@ export function MDXVideo({ src, caption, controls = true, autoplay = false }: MD
             muted={autoplay}
             loop={autoplay}
             playsInline
+            preload="metadata"
           />
         )}
       </div>
