@@ -17,7 +17,7 @@ function toLoomEmbed(src: string, autoplay: boolean): string {
     "hide_share=true",
     "hide_title=true",
     "hideEmbedTopBar=true",
-    autoplay ? "autoplay=1" : "",
+    autoplay ? "autoplay=0" : "",
   ]
     .filter(Boolean)
     .join("&");

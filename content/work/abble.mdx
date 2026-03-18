@@ -1,0 +1,105 @@
+---
+title: "Abble: A visibility layer for product teams."
+slug: "abble"
+company: "Abble"
+role: "Product Design & Product Management"
+year: 2026
+duration: "Q4 2025 – Present"
+status: "in-progress"
+tags: ["Product Designer", "Vibe Coding", "B2B SaaS", "Developer Tools"]
+coverImage: "/images/work/abble-banner.png"
+summary: "a tool that automatically translates engineering activity into plain-English updates, progress stories, and exportable changelogs so non-technical teams always know what's shipping."
+externalUrl: ""
+featured: true
+order: 4
+publishedAt: "2026-02-10"
+---
+
+# Overview
+
+<MDXImage src="/images/work/abble-hero.png" alt="Abble — visibility and communication layer for product teams" caption="Abble — Story feed, changelog export, and project dashboard" />
+
+## Engineering progress happens in GitHub. The rest of the company has no idea.
+
+Product managers, marketers, and support teams need to know what's been shipped, what's in progress, and what's coming next — but that information lives buried in commits, PRs, and deployment logs that only engineers read. The result is a constant stream of Slack messages, standups, and interruptions just to answer one question: *what's the current status?*
+
+Abble is a concept product I'm designing and building — a visibility and communication layer that automatically translates development activity into plain-English updates, progress stories, and shareable changelogs. No more chasing engineers for status. No more reading commits.
+
+<MDXImage src="/images/work/abble-objective-focus.png" alt="objective and focus" caption="" />
+
+# Problem
+## Engineering progress is invisible to everyone who isn't an engineer.
+
+The gap isn't that teams don't communicate — they do. But the tools they use to do it (Git, Jira, PRs) were built for developers. Everyone else is left translating, chasing, or guessing.
+
+### The Real Cost
+Product leads sit on calls without accurate status. Marketing teams miss launch windows because they didn't know something shipped. Support teams get blindsided by changes. The engineering team — who are actually heads-down executing — spend a disproportionate amount of their time writing updates for people rather than writing code.
+
+<MDXImage src="/images/work/abble-problem-diagram.png" alt="the visibility gap between engineering and the rest of the team" caption="Engineering activity lives in tools the rest of the company can't read — Abble bridges that gap" />
+
+# Research
+## One conversation that confirmed the problem was real — and complicated.
+
+I conducted a user research interview with Joan, a Product Team Lead with five years of PM experience who also manages people, processes, and cross-functional communication. I wanted to understand how product team leads currently track engineering progress and whether the problem I was designing for matched what actually happens in practice.
+
+<MDXImage src="/images/work/abble-research.png" alt="user research insights from Joan" caption="Key insights from the user interview with Joan" />
+
+### What Joan's workflow actually looks like
+Her team uses Slack, Jira, and async updates — but the real work of tracking progress is relational, not tooled. They've tried product roadmaps, hit bottlenecks (work stuck in UAT, never reaching customers), and pivoted to cycle-based scoping. Customer success, sales, and marketing all join the cycle planning sessions. To stay informed, they rely heavily on senior engineers who can communicate well.
+
+### The insight that mattered most
+Joan understood the problem immediately — but her real question was: *how does the solution actually work, and how does it map to what we deal with in practice?*
+
+That was the brief. The design challenge wasn't convincing anyone the problem exists. It was building something with enough clarity and structure that a PM could trust it — not just read it.
+
+### What this told me about the design
+The solution couldn't just surface data. It needed to translate it into something a non-technical stakeholder could act on — without adding another tool to their stack, and without asking engineers to do anything differently.
+
+# Solution framing
+## Translate activity automatically. Make it shareable instantly.
+
+The core bet behind Abble: if you can read a Git commit, you have everything you need to generate a plain-English update. The design challenge was building a system around that idea that felt natural to both the team that generates the activity and the team that needs to understand it.
+
+<MDXImage src="/images/work/abble-architecture.png" alt="Abble system overview" caption="GitHub activity → Stories (auto-generated) → Changelog (exportable) → team-wide visibility" />
+
+### Stories — the core feature
+Commits and PRs, grouped by branch or feature and translated into readable summaries. The Story feed updates automatically as development happens — no manual input from engineers.
+
+### Changelogs — from Stories to shareable updates
+Teams can select Story items, preview them as a formatted changelog, and push them to Slack, Notion, or export as Markdown. One click from internal update to external communication.
+
+### Dashboard — all projects, always current
+A high-level view of every project: last update, commit activity, and exports — so any team member can get the full picture without asking anyone.
+
+# Design decisions
+## Making development activity legible to the people who need it most.
+
+### Onboarding that gets to value in three screens
+The onboarding flow was scoped tightly: sign up with GitHub OAuth, set up or join a workspace, connect repos. No manual configuration, no long setup wizard. The fastest path to a populated Story feed was the right path — so I cut everything that delayed it.
+
+<MDXImage src="/images/work/abble-onboarding.png" alt="Abble onboarding flow" caption="Three screens: sign up → workspace setup → repo connection → first Story feed" />
+
+### The Story feed as the primary surface
+Everything in Abble flows from the Story feed. I designed it as the landing view after onboarding and the default state of every project — not a secondary tab, not a settings screen. Each Story card shows the plain-English summary up front, with commit-level detail available on expansion. Filters by branch, author, and date let teams zero in without losing the full picture.
+
+<MDXImage src="/images/work/abble-story-feed.png" alt="Abble Story feed" caption="The Story feed — auto-generated summaries with expandable commit detail" />
+
+### Export as a first-class action, not a buried setting
+Changelogs aren't a report you generate quarterly — they're something teams need for standups, stakeholder meetings, and release notes. I designed the export flow as a modal accessible directly from the Story feed: select items, add a title, preview, and push. The export history keeps a record so teams can find and re-share past updates without hunting.
+
+<MDXImage src="/images/work/abble-export.png" alt="Changelog export flow" caption="Select stories → preview → export to Slack, Notion, or Markdown in one flow" />
+
+### Permissions designed for real team structures
+Not everyone needs the same access. Admins connect repos, manage integrations, and control membership. Members view and export. I kept the roles simple for MVP — two levels, no edge case complexity — because Joan's interview made it clear that teams already have role norms; Abble shouldn't try to reinvent them.
+
+<MDXImage src="/images/work/abble-permissions.png" alt="Team and permissions settings" caption="Simple two-role model — admin and member — with invite flow built into settings" />
+
+# Reflection
+### The problem was validated in the first five minutes of research. The design challenge came after.
+Joan confirmed the visibility gap immediately. But her follow-up — *how does this actually work in practice?* — was the harder question to answer in the design. The job wasn't just showing data. It was making the system legible enough that a PM would trust it without needing to verify it manually.
+
+### Designing something you're also building changes how you make decisions.
+Working in both design and code simultaneously forces a different kind of honesty about complexity. Features that look clean in Figma get interrogated differently when you're the one shipping them. That constraint made the MVP sharper — less surface area, more depth where it matters.
+
+### Non-technical users don't need less information — they need better translation.
+The instinct when designing for non-technical audiences is to hide complexity. But Joan's team didn't want less information — they wanted information they could actually use. Abble's job is translation, not reduction. That distinction shaped every design decision from the Story format to the export flow.

@@ -50,7 +50,9 @@
       "Bash(pkill -f \"tsc\")",
       "Bash(git add:*)",
       "Bash(gh run:*)",
-      "Bash(npx vercel:*)"
+      "Bash(npx vercel:*)",
+      "Bash(grep -L \"^tags:\" /Users/USER/Desktop/sinachpat-portfolio/content/work/*.mdx)",
+      "Bash(grep -r \"Script\\\\|analytics\\\\|gtag\\\\|tracking\" /Users/USER/Desktop/sinachpat-portfolio/app --include=*.tsx --include=*.ts)"
     ]
   }
 }
