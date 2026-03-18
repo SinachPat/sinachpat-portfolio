@@ -36,7 +36,7 @@ export default function AboutPage() {
               src="/images/about/my-picture.jpg"
               alt="Osinachi Patrick"
               fill
-              sizes="(max-width: 640px) 100vw, 640px"
+              sizes="(max-width: 640px) 100vw, 740px"
               className="object-cover"
               priority
             />
