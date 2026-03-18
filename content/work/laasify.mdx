@@ -1,0 +1,123 @@
+---
+title: "Laasify: A logistics marketplace built for Africa."
+slug: "laasify"
+company: "Shiplaas"
+role: "Product Design, UX Research & Systems Design"
+year: 2024
+duration: "Q1 2025 – Q2 2025"
+status: "live"
+tags: ["Product Designer", "UX Researcher", "Systems Designer", "3 engineers"]
+coverImage: "/images/work/laas-banner.png"
+summary: "Designing Laasify — a cloud-based platform that lets merchants and businesses compare, book, and track logistics services across Nigeria and Africa from a single dashboard."
+externalUrl: "https://shiplaas.com/"
+featured: true
+order: 2
+publishedAt: "2025-09-01"
+---
+
+# Overview
+
+Laas Demo -- demand side of the platform:
+<MDXLoom
+  src="https://www.loom.com/share/56eb82bc55e04081a9a0d69fbc1aa8f9"
+  caption="Laas Demo"
+/>
+
+Move Demo -- supply side of the platform:
+
+<MDXLoom
+  src="https://www.loom.com/share/3ed0a0ecbd2e4e52af54b1ad12263e59"
+  caption="Move Demo I"
+/>
+<MDXLoom
+  src="https://www.loom.com/share/bf434b500f1842af9606a82024ba8c01"
+  caption="Move Demo II"
+/>
+
+
+
+## Logistics in Nigeria is fragmented. Laasify is the layer that brings it together.
+
+Nigeria has no shortage of logistics providers — from DHL to small independent couriers operating in a single city. But for a merchant trying to ship an order, that abundance is actually a problem. There's no standard way to compare options, no single place to track a shipment, and no protection if something goes wrong.
+
+Shiplaas is building the infrastructure to change that. The product — Laasify — is a logistics marketplace where merchants can get quotes from multiple providers, book shipments, and manage fulfilment end-to-end. On the other side, logistics providers get a channel to reach more customers and manage their operations. I led product design across both surfaces, from initial discovery through to an MVP spec for two distinct products.
+
+# Problem
+## Too many providers, no way to easily compare.
+
+The logistics landscape in Nigeria operates across dozens of independent providers with no shared infrastructure. A merchant shipping today might use WhatsApp to get a price quote, pay via bank transfer with no escrow, and have no real-time visibility into where their goods are.
+
+The most painful problems — identified across stakeholder interviews and user research — fell into five buckets: cost opacity, fraud and poor recourse, no real-time visibility, unreliable timelines, and access limitations for small businesses.
+
+### The Real Cost
+For SMEs selling on Bumpa, Paystack Storefronts, or Flutterwave Market, logistics is often the most broken part of their business — and the one most visible to customers. A bad delivery doesn't just cost the shipment; it costs the relationship.
+
+# Research
+## Understanding the system from both sides — and finding what actually matters.
+
+I ran two parallel tracks of research: stakeholder interviews with the founding team to understand product vision and commercial goals, and live interviews with users on both sides of the logistics equation — merchants who book shipments, and logistics managers who fulfil them.
+
+### Stakeholder interviews
+I prepared a structured questionnaire for the founding team to understand the product's commercial objective, target market, and success metrics — so the UX work could be explicitly tied to how the business wins. Key outcome: the platform needs to serve two very different users and must work as a marketplace for both to succeed.
+
+### User interviews
+I spoke with four people directly involved in logistics — including logistics managers and merchants — to understand the current state, pain points, and mental models for both requesting and fulfilling shipments. These conversations shaped the feature priorities for the MVP.
+
+### Competitive analysis
+I mapped global logistics aggregators — Stord, Shippo, ShipHero, ShipBob, and Flexport — to understand established patterns in the space, and where the African context creates meaningfully different requirements: cash-based payments, informal address systems, mixed transport modes, and the dominance of social commerce.
+
+### The four findings that shaped the design direction
+
+An **escrow system** that closes with a user review was described as a non-negotiable trust mechanism — the foundation of the entire platform's credibility. **Shipment timeline visualisation** needs to be explicit and unambiguous — users want to see stages, not just status labels. **Full transparency** at every step is the primary value proposition for merchants who have been burned before. And logistics providers range from API-ready giants to small local couriers with no tech at all — the platform needs to serve all of them through different integration models.
+
+# Solution framing
+## Two products, one platform — built around the same trust layer.
+
+The research pointed clearly toward two products that serve the same infrastructure but in opposite directions. Designing them as separate surfaces was the right call — but they share the same backbone: escrow-protected payments, real-time tracking, and a review system that benefits both sides.
+
+<MDXImage src="/images/work/laas-platform-architecture.png" alt="platform architecture" caption="Laasify brings them together" />
+
+### Move by Laas — for logistics providers
+A logistics services extension system where providers list their offerings, manage their fleets and warehouses, receive and fulfil orders, and track their financial performance — all in one place. Designed for teams, not just admins.
+
+### Laas — for merchants and businesses
+The merchant-facing marketplace where users manage inventory, book shipments by comparing providers and rates, track all their orders in real time, and access analytics on what's working. Built for social commerce sellers and growing businesses alike.
+
+### API layer — for platforms and developers
+A developer-facing integration layer that lets e-commerce platforms, payment tools like Flutterwave and Paystack, and social commerce storefronts embed logistics capabilities directly into their products.
+
+# Design decisions — Move
+## Giving logistics operations teams a tool that matches how they actually work.
+Move needed to work for the entire organisation — from the admin managing the account, to the logistics manager overseeing orders, to the driver checking their assignment on the road. The core design challenge was making a complex operational tool feel navigable, not overwhelming.
+
+### A structured portfolio system — not a free-form listing
+Rather than letting providers describe their services in an open field, I designed a structured service listing form with standardised fields: category, transport mode, regions served, size ranges, price tiers, and availability status. This standardisation is what makes the comparison experience work on the merchant side — it's also what allows the system to match shipment requests to providers accurately.
+
+<MDXImage src="/images/work/move-portfolio-listing.png" alt="Move service listing form" caption="Structured service listings ensure consistency across providers — making them comparable on the merchant side" />
+
+### Fleet and facility management scoped to groups, not just individuals
+Logistics operations aren't managed by one person — they're team efforts. I designed Fleet & Facility management around a group model: the admin creates a group, adds fleets or warehouses, and assigns managers. Each manager can then assign drivers, who receive their orders and update statuses from their own lightweight view. This gave the admin full visibility without becoming a bottleneck for day-to-day operations.
+
+<MDXImage src="/images/work/move-fleet-management.png" alt="Fleet and facility group management" caption="The group-based team model — distributing operational authority without losing admin visibility" />
+
+# Design decisions — Laas marketplace
+## From scattered orders to a single fulfilment command centre.
+
+The merchant product needed to handle a wide range of users — from a solo seller managing 10 orders a week to a mid-size business shipping in bulk across multiple channels.
+
+### Booking a shipment flows from the order, not from scratch
+Rather than asking merchants to re-enter shipping details each time, I designed the booking flow to start from the order. Selecting an order pre-fills all the shipment details — product description, dimensions, customer address, pick-up location — and then generates a live comparison of available providers matching those requirements. The merchant picks a provider, reviews the service details, and pays. One flow, minimum input.
+
+<MDXImage src="/images/work/laas-booking-flow.png" alt="Order-to-shipment booking flow" caption="Booking flows from the order — no re-entering details, just choosing a provider and confirming" />
+
+> This case study is not exhausted as some things (most evidently the design decisions for the Move product omitted on purpose for legal purposes). But I'm open to discuss these solutions & designs anytime.
+
+# Reflection
+### Designing for a two-sided marketplace means designing for mutual trust first.
+The escrow system, dispute workflow, and review mechanism weren't features — they were the foundation. Without them, neither providers nor merchants had a reason to trust the platform. Every design decision downstream depended on getting these right first.
+
+### Standardisation on the supply side enables comparison on the demand side.
+The structured service listing form wasn't the most exciting design work — but it was the most important. The quality of the merchant comparison experience was entirely dependent on the consistency of the provider listings. Good marketplace design starts with structuring the input, not just the output.
+
+### Context changes the design problem, even when the pattern looks familiar.
+Global logistics platforms like ShipBob and Flexport were useful references — but they were built for markets with formalised addresses, API-ready carriers, and digital-first merchants. Nigeria's informal address systems, small couriers with no tech, and social-commerce-first sellers required rethinking almost every assumption those tools make by default.
