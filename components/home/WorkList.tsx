@@ -32,16 +32,16 @@ export function WorkList({ posts }: WorkListProps) {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {posts.map((post, i) => (
-            <FadeIn key={post.slug} delay={i * 80}>
+            <FadeIn key={post.slug} delay={i * 80} className="h-full">
               <Link
                 href={`/work/${post.slug}`}
-                className="notion-card group block overflow-hidden border border-[var(--border)]"
+                className="notion-card group flex flex-col h-full overflow-hidden border border-[var(--border)]"
                 style={{ backgroundColor: "var(--surface)" }}
                 data-cursor="pointer"
               >
                 {/* Cover image area */}
                 <div
-                  className="w-full aspect-[16/9] overflow-hidden"
+                  className="w-full aspect-[16/9] overflow-hidden shrink-0"
                   style={{ backgroundColor: "var(--gray-1)" }}
                 >
                   {post.coverImage ? (
@@ -64,7 +64,7 @@ export function WorkList({ posts }: WorkListProps) {
                 </div>
 
                 {/* Card content */}
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-1">
                   {/* Meta row: year + status */}
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-2">
@@ -105,8 +105,8 @@ export function WorkList({ posts }: WorkListProps) {
                     {post.summary}
                   </p>
 
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-1.5">
+                  {/* Tags — mt-auto pins them to the bottom */}
+                  <div className="flex flex-wrap gap-1.5 mt-auto">
                     {post.tags.slice(0, 3).map((tag) => (
                       <Tag key={tag}>{tag}</Tag>
                     ))}
