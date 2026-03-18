@@ -33,7 +33,7 @@ export function Hero() {
           style={{ color: "var(--text-2)", maxWidth: "48ch" }}
         >
           I&apos;m Osinachi Patrick — I have 6+ years experience work at the intersection of product
-          strategy, design, and engineering. I'm currently building Meetwith. Before Meetwith, i worked as product/design lead at ShipLaas
+          strategy, design, and engineering. I'm currently building Meetwith. Before Meetwith, i worked as product/design lead at ShipLaas, before that I worked as a product and design lead at Sonr, before that I worked as a designer at Wireways (a nigerian fintech startup). I also have experience working with startups and agencies in the US, UK, and Nigeria. I have a passion for building products that solve real problems and make people&apos;s lives easier.
         </p>
       </FadeIn>
     </section>
