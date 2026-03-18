@@ -52,7 +52,13 @@ export function getWorkSlugs(): string[] {
   return fs
     .readdirSync(dir)
     .filter((f) => f.endsWith(".mdx"))
-    .map((f) => f.replace(/\.mdx$/, ""));
+    .map((f) => f.replace(/\.mdx$/, ""))
+    .filter((slug) => {
+      // Skip files with no frontmatter (e.g. empty placeholder files)
+      const raw = fs.readFileSync(path.join(dir, `${slug}.mdx`), "utf-8");
+      const { data } = matter(raw);
+      return !!data.title && !!data.slug;
+    });
 }
 
 // ─── Teardowns ────────────────────────────────────────────────────────────────

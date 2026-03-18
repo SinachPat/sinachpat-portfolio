@@ -107,7 +107,7 @@ export default async function WorkPage({ params }: Props) {
               { label: "Company", value: meta.company },
               {
                 label: "Team",
-                value: meta.tags.slice(0, 4).join(", "),
+                value: (meta.tags ?? []).slice(0, 4).join(", "),
               },
             ].map((item) => (
               <div
@@ -244,7 +244,7 @@ export default async function WorkPage({ params }: Props) {
             Filed under
           </p>
           <div className="flex flex-wrap gap-2">
-            {meta.tags.map((tag) => (
+            {(meta.tags ?? []).map((tag) => (
               <Tag key={tag} variant="outline">
                 {tag}
               </Tag>
