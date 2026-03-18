@@ -137,7 +137,7 @@ export default async function WorkPage({ params }: Props) {
       <FadeIn delay={180}>
         <section className="container-page mt-12">
           <div
-            className="w-full aspect-[16/7] overflow-hidden border border-[var(--border)]"
+            className="w-full aspect-[16/9] overflow-hidden border border-[var(--border)]"
             style={{ backgroundColor: "var(--gray-1)", borderRadius: "6px" }}
           >
             {meta.coverImage && meta.coverImage !== "/images/work/onboarding-cover.jpg" ? (
