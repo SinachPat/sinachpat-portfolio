@@ -8,7 +8,7 @@ export function Hero() {
           className="text-xs font-medium uppercase tracking-widest mb-6"
           style={{ color: "var(--text-3)" }}
         >
-          Product Designer & Engineer
+          Product Designer & Builder
         </p>
       </FadeIn>
 
