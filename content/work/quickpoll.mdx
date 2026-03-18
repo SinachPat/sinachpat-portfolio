@@ -82,3 +82,33 @@ After hitting "Create Poll," the host lands on the group calendar view. Slots ar
 ## Provide your name, tap your available slots, save.
 Guests outside of the host's contacts land on a page showing meeting details, availability grid to add availability and a read-only list of other participants. They provide their availability by importing or adding manually, enter their name, hit Continue, and — they see a summary of others availability and theirs and they can choose to share the poll with others too.
 <MDXImage src="/images/work/quickpoll-guest-availability.png" alt="quickpoll" caption="guests adding availability"/>
+
+### Scheduling the meeting
+## Select a slot, fill in the remaining details, confirm.
+The host sees the meeting details and populated availability grid. When they select a time slot, they provide the remaining meeting details and schedule. They can also extend the poll's availability deadline, or cancel and delete the poll.
+
+<MDXLoom src="https://www.loom.com/share/f80c9e6a71dc4bdb8901dce27c690cd1" caption="QuickPoll — flexible group scheduling"/>
+
+# We shipped V1 as a beta. The core objective held. The details needed work.
+After releasing the beta and users testing it, the core objective was validated — users could collect availability and schedule without creating a group. But the team identified functional and UX improvements needed for the next cycle.
+
+### Poll creation order felt wrong
+Users expected to set the meeting duration and date range first, then add the title and description. The V1 order didn't match how people think about scheduling.
+
+### Inviting participants was too limited
+Both hosts and permitted guests needed more ways to add people: invite from contacts, share a link, or invite directly by email.
+
+### Email invites needed smarter handling
+If an invited email already had a Meetwith account, they should sign in and join with their existing availability config. If they didn't, the flow should guide them to set up an account and connect their calendar.
+
+These were all fixed in the design and it improved the experience for users.
+
+# Reflection
+### Ship the concept, then fix the experience.
+V1 validated the core idea. V2 addressed everything the beta surfaced. Trying to get both right in one cycle would have delayed shipping without improving the outcome.
+
+### Form field order is a design decision, our users had a way they wanted to follow through on providing the poll details.
+Reordering the creation flow to lead with duration and dates — the decisions people make first — was a small change with outsized impact on how natural the flow felt.
+
+### Every guest touchpoint is a platform touchpoint.
+Email invites that guide new users to create accounts turned a feature for scheduling into a growth mechanism for the platform. That came from thinking about the business problem alongside the UX problem.
