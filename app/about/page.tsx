@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Tag } from "@/components/ui/Tag";
 
@@ -28,10 +29,17 @@ export default function AboutPage() {
         {/* Photo */}
         <FadeIn>
           <div
-            className="w-full aspect-[4/3] overflow-hidden border border-[var(--border)] mb-10"
+            className="relative w-full aspect-[4/3] overflow-hidden border border-[var(--border)] mb-10"
             style={{ backgroundColor: "var(--gray-1)", borderRadius: "6px" }}
           >
-            {/* Replace with next/image when you have a photo */}
+            <Image
+              src="/images/about/my-picture.jpg"
+              alt="Osinachi Patrick"
+              fill
+              sizes="(max-width: 640px) 100vw, 640px"
+              className="object-cover"
+              priority
+            />
           </div>
         </FadeIn>
 
