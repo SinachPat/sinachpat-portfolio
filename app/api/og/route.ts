@@ -1,23 +1,20 @@
 import { ImageResponse } from "next/og";
+import { NextRequest } from "next/server";
 
 export const runtime = "edge";
-export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
 
-// ─── Load a Google Font by family + weight ────────────────────────────────────
 async function loadGoogleFont(family: string, weight: number) {
   const css = await fetch(
     `https://fonts.googleapis.com/css2?family=${encodeURIComponent(family)}:ital,wght@0,${weight};1,${weight}&display=swap`,
     { headers: { "User-Agent": "Mozilla/5.0" } }
   ).then((r) => r.text());
 
-  // Pull the first woff2 URL out of the CSS
   const url = css.match(/src: url\((.+?)\) format\('woff2'\)/)?.[1];
   if (!url) throw new Error(`Could not resolve font URL for ${family}`);
   return fetch(url).then((r) => r.arrayBuffer());
 }
 
-export default async function OgImage() {
+export async function GET(_req: NextRequest) {
   const [loraData, interData] = await Promise.all([
     loadGoogleFont("Lora", 400),
     loadGoogleFont("Inter", 500),
@@ -55,9 +52,8 @@ export default async function OgImage() {
               textTransform: "uppercase",
             }}
           >
-            Product Designer &amp; Builder
+            Product Designer & Builder
           </span>
-
           <span
             style={{
               fontSize: 13,
@@ -97,7 +93,6 @@ export default async function OgImage() {
           >
             designs
           </span>
-          {/* Accent italic line — matches hero */}
           <span
             style={{
               fontSize: 72,
@@ -123,17 +118,9 @@ export default async function OgImage() {
             paddingTop: 28,
           }}
         >
-          <span
-            style={{
-              fontSize: 15,
-              fontFamily: "Inter",
-              color: "#787774",
-            }}
-          >
+          <span style={{ fontSize: 15, fontFamily: "Inter", color: "#787774" }}>
             Osinachi Patrick · sinachpat-portfolio.vercel.app
           </span>
-
-          {/* Monogram */}
           <div
             style={{
               width: 40,
@@ -161,7 +148,8 @@ export default async function OgImage() {
       </div>
     ),
     {
-      ...size,
+      width: 1200,
+      height: 630,
       fonts: [
         { name: "Lora", data: loraData, weight: 400, style: "normal" },
         { name: "Lora", data: loraData, weight: 400, style: "italic" },
