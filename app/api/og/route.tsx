@@ -3,21 +3,14 @@ import { NextRequest } from "next/server";
 
 export const runtime = "edge";
 
-async function loadGoogleFont(family: string, weight: number) {
-  const css = await fetch(
-    `https://fonts.googleapis.com/css2?family=${encodeURIComponent(family)}:ital,wght@0,${weight};1,${weight}&display=swap`,
-    { headers: { "User-Agent": "Mozilla/5.0" } }
-  ).then((r) => r.text());
-
-  const url = css.match(/src: url\((.+?)\) format\('woff2'\)/)?.[1];
-  if (!url) throw new Error(`Could not resolve font URL for ${family}`);
-  return fetch(url).then((r) => r.arrayBuffer());
-}
+const BASE = "https://sinachpat-portfolio.vercel.app";
 
 export async function GET(_req: NextRequest) {
-  const [loraData, interData] = await Promise.all([
-    loadGoogleFont("Lora", 400),
-    loadGoogleFont("Inter", 500),
+  // Fonts served from our own domain — no Google Fonts dependency at runtime
+  const [loraRegular, loraItalic, interMedium] = await Promise.all([
+    fetch(`${BASE}/fonts/Lora-Regular.woff2`).then((r) => r.arrayBuffer()),
+    fetch(`${BASE}/fonts/Lora-Italic.woff2`).then((r) => r.arrayBuffer()),
+    fetch(`${BASE}/fonts/Inter-Medium.woff2`).then((r) => r.arrayBuffer()),
   ]);
 
   return new ImageResponse(
@@ -151,9 +144,9 @@ export async function GET(_req: NextRequest) {
       width: 1200,
       height: 630,
       fonts: [
-        { name: "Lora", data: loraData, weight: 400, style: "normal" },
-        { name: "Lora", data: loraData, weight: 400, style: "italic" },
-        { name: "Inter", data: interData, weight: 500, style: "normal" },
+        { name: "Lora", data: loraRegular, weight: 400, style: "normal" },
+        { name: "Lora", data: loraItalic,  weight: 400, style: "italic" },
+        { name: "Inter", data: interMedium, weight: 500, style: "normal" },
       ],
     }
   );
