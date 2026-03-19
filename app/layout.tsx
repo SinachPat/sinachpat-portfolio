@@ -44,11 +44,11 @@ export const metadata: Metadata = {
     locale: "en_US",
     siteName: "Osinachi Patrick",
     url: BASE_URL,
-    images: [{ url: `${BASE_URL}/api/og`, width: 1200, height: 630 }],
+    images: [{ url: `${BASE_URL}/og.png`, width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    images: [`${BASE_URL}/api/og`],
+    images: [`${BASE_URL}/og.png`],
   },
 };
 
