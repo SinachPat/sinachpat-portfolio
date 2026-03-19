@@ -63,6 +63,13 @@ export default function RootLayout({
         {/* Preconnect for Loom embeds — saves ~150ms DNS+TCP on first embed */}
         <link rel="preconnect" href="https://www.loom.com" />
         <link rel="dns-prefetch" href="https://cdn.loom.com" />
+        {/* Anti-FOUC: apply stored theme before paint. Default is light.
+            This only reads from localStorage (no user input) so XSS risk is not applicable. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("theme");var r=t==="dark"?"dark":t==="system"?window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light":"light";document.documentElement.setAttribute("data-theme",r)}catch(e){}})()`,
+          }}
+        />
       </head>
       <body
         className="antialiased min-h-screen flex flex-col"

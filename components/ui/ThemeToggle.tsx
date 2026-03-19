@@ -24,12 +24,12 @@ const CYCLE: Record<Theme, Theme> = {
 };
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("system");
+  const [theme, setTheme] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem("theme") as Theme | null;
-    setTheme(stored || "system");
+    setTheme(stored || "light");
     setMounted(true);
   }, []);
 

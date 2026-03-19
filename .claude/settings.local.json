@@ -79,7 +79,12 @@
       "Bash(sips -g pixelWidth -g pixelHeight -g format /Users/USER/Desktop/sinachpat-portfolio/public/og.png)",
       "Bash(curl -sI \"https://sinachpat-portfolio.vercel.app/og.png\")",
       "Bash(/tmp/og.svg:*)",
-      "Bash(sips -s format png /tmp/og.svg --out /Users/USER/Desktop/sinachpat-portfolio/public/og.png)"
+      "Bash(sips -s format png /tmp/og.svg --out /Users/USER/Desktop/sinachpat-portfolio/public/og.png)",
+      "Bash(node -e \":*)",
+      "Bash(while kill:*)",
+      "Bash(do sleep:*)",
+      "Bash(done)",
+      "Bash(kill -0 2391)"
     ]
   }
 }
