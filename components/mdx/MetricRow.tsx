@@ -11,7 +11,7 @@ interface MetricRowProps {
 export function MetricRow({ metrics }: MetricRowProps) {
   return (
     <div
-      className="grid gap-px my-8 rounded-lg overflow-hidden border border-[var(--border)]"
+      className="grid gap-px my-8 rounded-lg overflow-hidden border border-border"
       style={{
         gridTemplateColumns: `repeat(${metrics.length}, 1fr)`,
         backgroundColor: "var(--border)",

@@ -36,13 +36,13 @@ export function WorkList({ posts }: WorkListProps) {
             <FadeIn key={post.slug} delay={i * 80} className="h-full">
               <Link
                 href={`/work/${post.slug}`}
-                className="notion-card group flex flex-col h-full overflow-hidden border border-[var(--border)]"
+                className="notion-card group flex flex-col h-full overflow-hidden border border-[var(--border"
                 style={{ backgroundColor: "var(--surface)" }}
                 data-cursor="pointer"
               >
                 {/* Cover image area */}
                 <div
-                  className="relative w-full aspect-[16/9] overflow-hidden shrink-0"
+                  className="relative w-full aspect-video overflow-hidden shrink-0"
                   style={{ backgroundColor: "var(--gray-1)" }}
                 >
                   {post.coverImage ? (
@@ -94,7 +94,7 @@ export function WorkList({ posts }: WorkListProps) {
 
                   {/* Title */}
                   <h3
-                    className="text-lg font-semibold leading-snug mb-2 transition-colors duration-200 group-hover:text-[var(--accent)]"
+                    className="text-lg font-semibold leading-snug mb-2 transition-colors duration-200 group-hover:text-accent"
                     style={{ color: "var(--text-1)" }}
                   >
                     {post.title}

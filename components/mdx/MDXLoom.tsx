@@ -52,7 +52,7 @@ export function MDXLoom({ src, caption }: MDXLoomProps) {
     <figure className="my-10">
       <div
         ref={wrapperRef}
-        className="overflow-hidden border border-[var(--border)]"
+        className="overflow-hidden border border-border"
         style={{ borderRadius: "6px", position: "relative", paddingBottom: "56.25%" }}
       >
         {embedSrc ? (

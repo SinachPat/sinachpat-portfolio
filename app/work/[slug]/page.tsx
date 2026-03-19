@@ -52,7 +52,7 @@ export default async function WorkPage({ params }: Props) {
         <FadeIn>
           <Link
             href="/"
-            className="inline-flex items-center gap-1 text-xs transition-colors hover:text-[var(--accent)] mb-10"
+            className="inline-flex items-center gap-1 text-xs transition-colors hover:text-accent mb-10"
             style={{ color: "var(--text-3)" }}
             data-cursor="pointer"
           >
@@ -99,7 +99,7 @@ export default async function WorkPage({ params }: Props) {
         {/* ═══ Metadata Grid (Rachel Chen style) ═══ */}
         <FadeIn delay={120}>
           <div
-            className="grid grid-cols-2 sm:grid-cols-4 gap-px overflow-hidden border border-[var(--border)]"
+            className="grid grid-cols-2 sm:grid-cols-4 gap-px overflow-hidden border border-border"
             style={{ backgroundColor: "var(--border)", borderRadius: "6px" }}
           >
             {[
@@ -138,7 +138,7 @@ export default async function WorkPage({ params }: Props) {
       <FadeIn delay={180}>
         <section className="container-page mt-12">
           <div
-            className="relative w-full aspect-[16/9] overflow-hidden border border-[var(--border)]"
+            className="relative w-full aspect-video overflow-hidden border border-border"
             style={{ backgroundColor: "var(--gray-1)", borderRadius: "6px" }}
           >
             {meta.coverImage && meta.coverImage !== "/images/work/onboarding-cover.jpg" ? (
@@ -169,7 +169,7 @@ export default async function WorkPage({ params }: Props) {
         <FadeIn delay={220}>
           <section className="container-page mt-10">
             <div
-              className="grid gap-px overflow-hidden border border-[var(--border)]"
+              className="grid gap-px overflow-hidden border border-border"
               style={{
                 gridTemplateColumns: `repeat(${meta.metrics.length}, 1fr)`,
                 backgroundColor: "var(--border)",
@@ -239,7 +239,7 @@ export default async function WorkPage({ params }: Props) {
         </div>
 
         {/* Tags */}
-        <div className="mt-16 pt-8 border-t border-[var(--border)]">
+        <div className="mt-16 pt-8 border-t border-border">
           <p
             className="text-xs font-medium uppercase tracking-widest mb-4"
             style={{ color: "var(--text-3)" }}

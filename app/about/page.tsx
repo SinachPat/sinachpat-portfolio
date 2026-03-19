@@ -29,7 +29,7 @@ export default function AboutPage() {
         {/* Photo */}
         <FadeIn>
           <div
-            className="relative w-full aspect-[4/3] overflow-hidden border border-[var(--border)] mb-10"
+            className="relative w-full aspect-video overflow-hidden border border-border mb-10"
             style={{ backgroundColor: "var(--gray-1)", borderRadius: "6px" }}
           >
             <Image
