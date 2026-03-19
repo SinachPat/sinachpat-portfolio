@@ -36,7 +36,7 @@ export function WorkList({ posts }: WorkListProps) {
             <FadeIn key={post.slug} delay={i * 80} className="h-full">
               <Link
                 href={`/work/${post.slug}`}
-                className="notion-card group flex flex-col h-full overflow-hidden border border-[var(--border"
+                className="notion-card group flex flex-col h-full overflow-hidden border border-[var(--border)]"
                 style={{ backgroundColor: "var(--surface)" }}
                 data-cursor="pointer"
               >
