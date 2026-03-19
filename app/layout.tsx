@@ -28,6 +28,8 @@ export const viewport: Viewport = {
   ],
 };
 
+const BASE_URL = "https://sinachpat-portfolio.vercel.app";
+
 export const metadata: Metadata = {
   title: {
     default: "Osinachi Patrick",
@@ -36,10 +38,24 @@ export const metadata: Metadata = {
   description:
     "Product guy who builds, designs and engineers. Exploring the intersection of product strategy, design, and engineering.",
   authors: [{ name: "Osinachi Patrick" }],
+  metadataBase: new URL(BASE_URL),
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: "Osinachi Patrick",
+    url: BASE_URL,
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Osinachi Patrick — Product guy who builds, designs and engineers.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/opengraph-image.png"],
   },
 };
 
