@@ -45,9 +45,6 @@ export const metadata: Metadata = {
     siteName: "Osinachi Patrick",
     url: BASE_URL,
   },
-  twitter: {
-    card: "summary_large_image",
-  },
 };
 
 export default function RootLayout({
