@@ -103,7 +103,7 @@ const EXPERIENCE: Experience[] = [
     location: "Abuja, Nigeria",
   },
   {
-    company: "Codemarks",
+    company: "Codemarka",
     role: "Product Designer",
     start: "Jan 2020",
     end: "Feb 2020",

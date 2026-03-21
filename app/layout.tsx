@@ -28,7 +28,7 @@ export const viewport: Viewport = {
   ],
 };
 
-const BASE_URL = "https://sinachpat-portfolio.vercel.app";
+const BASE_URL = "https://sinachpat.com";
 
 export const metadata: Metadata = {
   title: {

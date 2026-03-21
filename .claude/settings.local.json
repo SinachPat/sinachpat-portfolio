@@ -84,7 +84,11 @@
       "Bash(while kill:*)",
       "Bash(do sleep:*)",
       "Bash(done)",
-      "Bash(kill -0 2391)"
+      "Bash(kill -0 2391)",
+      "Bash(kill 2391)",
+      "Bash(kill -9 2391)",
+      "WebFetch(domain:sinachpat.com)",
+      "Bash(curl -sI https://sinachpat.com/og.png)"
     ]
   }
 }

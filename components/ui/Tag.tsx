@@ -6,18 +6,18 @@ interface TagProps {
 
 const TAG_STYLES: Record<NonNullable<TagProps["variant"]>, React.CSSProperties> = {
   default: {
-    backgroundColor: "rgba(55, 53, 47, 0.08)",
-    color: "#37352F",
+    backgroundColor: "var(--gray-2)",
+    color: "var(--text-2)",
     borderRadius: "3px",
   },
   accent: {
-    backgroundColor: "rgba(35, 131, 226, 0.12)",
-    color: "#2383E2",
+    backgroundColor: "var(--status-live-bg)",
+    color: "var(--accent)",
     borderRadius: "3px",
   },
   outline: {
-    border: "1px solid rgba(55, 53, 47, 0.16)",
-    color: "#787774",
+    border: "1px solid var(--border-hi)",
+    color: "var(--text-2)",
     borderRadius: "3px",
   },
 };

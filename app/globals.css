@@ -45,6 +45,52 @@
 }
 
 /* ═══════════════════════════════════════════════════
+   DARK THEME — mirrors Notion dark mode
+   ═══════════════════════════════════════════════════ */
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Backgrounds */
+  --bg:        #191919;
+  --surface:   #202020;
+  --surface-2: #2F2F2F;
+
+  /* Borders */
+  --border:    rgba(255, 255, 255, 0.09);
+  --border-hi: rgba(255, 255, 255, 0.16);
+
+  /* Hover state */
+  --hover-bg:  rgba(255, 255, 255, 0.05);
+
+  /* Text hierarchy */
+  --text-1:    #FFFFFFEB;
+  --text-2:    #FFFFFF9E;
+  --text-3:    rgba(255, 255, 255, 0.38);
+
+  /* Gray scale */
+  --gray-1:    #2F2F2F;
+  --gray-2:    rgba(255, 255, 255, 0.08);
+
+  /* Accent — slightly brighter for dark bg */
+  --accent:    #529CCA;
+  --accent-h:  #6BB0D6;
+
+  /* Status */
+  --status-live-bg:       rgba(82, 156, 202, 0.18);
+  --status-live-text:     #6BB0D6;
+  --status-shipped-bg:    rgba(68, 131, 97, 0.18);
+  --status-shipped-text:  #6DAF8D;
+  --status-progress-bg:   rgba(203, 145, 47, 0.18);
+  --status-progress-text: #DDB55C;
+  --status-archived-bg:   rgba(120, 119, 116, 0.18);
+  --status-archived-text: #9B9A97;
+
+  /* Header bg */
+  --header-bg: rgba(25, 25, 25, 0.88);
+}
+
+/* ═══════════════════════════════════════════════════
    TAILWIND v4 THEME
    ═══════════════════════════════════════════════════ */
 
@@ -98,6 +144,9 @@
 html {
   color-scheme: light;
   scroll-behavior: smooth;
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
 }
 
 body {
@@ -158,6 +207,13 @@ h1, h2, h3, h4 {
 }
 .btn-notion-primary:hover {
   background-color: #2F2D28;
+}
+[data-theme="dark"] .btn-notion-primary {
+  background-color: #FFFFFFEB;
+  color: #191919;
+}
+[data-theme="dark"] .btn-notion-primary:hover {
+  background-color: #FFFFFF;
 }
 
 /* ═══════════════════════════════════════════════════
